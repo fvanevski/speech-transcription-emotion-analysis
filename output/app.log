@@ -53,3 +53,50 @@
 2025-04-14 11:21:29,777 - INFO - Job 0787685b: Generating initial emotion summary...
 2025-04-14 11:21:29,778 - ERROR - \u274c Job 0787685b failed during processing: name 'EMO_VAL' is not defined
 2025-04-14 11:21:29,778 - INFO - Job 0787685b: Cleaning up...
+2025-04-14 11:29:31,084 - INFO - HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-04-14 11:29:31,091 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-04-14 11:29:31,096 - INFO - HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2025-04-14 11:29:43,931 - INFO - Job 28207b45 started. Temp: output\job_20250414_112943_28207b45\temp, Output: output\job_20250414_112943_28207b45\results
+2025-04-14 11:29:43,931 - INFO - Job 28207b45: Input is a URL. Downloading...
+2025-04-14 11:29:50,431 - INFO - Job 28207b45: YouTube audio downloaded to output\job_20250414_112943_28207b45\temp\audio_input_20250414_112943.wav
+2025-04-14 11:29:50,432 - INFO - Running ffprobe duration check for: output\job_20250414_112943_28207b45\temp\audio_input_20250414_112943.wav
+2025-04-14 11:29:50,476 - INFO - Audio duration: 1625.362 seconds
+2025-04-14 11:29:50,476 - INFO - Job 28207b45: Running WhisperX (with --diarize) on output\job_20250414_112943_28207b45\temp\audio_input_20250414_112943.wav...
+2025-04-14 11:31:03,755 - INFO - Job 28207b45: WhisperX finished.
+2025-04-14 11:31:03,755 - INFO - Job 28207b45: Looking for WhisperX output: output\job_20250414_112943_28207b45\results\audio_input_20250414_112943.json
+2025-04-14 11:31:03,755 - INFO - Job 28207b45: Adding emotion analysis via convert_json_to_structured...
+2025-04-14 11:31:06,537 - INFO - Job 28207b45: Emotion analysis added.
+2025-04-14 11:31:06,537 - INFO - Job 28207b45: Saving structured transcript to output\job_20250414_112943_28207b45\results\structured_transcript.json
+2025-04-14 11:31:06,575 - INFO - Job 28207b45: Generating initial emotion summary...
+2025-04-14 11:31:06,575 - ERROR - \u274c Job 28207b45 failed during processing: name 'EMO_VAL' is not defined
+2025-04-14 11:31:06,576 - ERROR - Traceback (most recent call last):
+  File "C:\Users\filip\Documents\GitHub\personal-projects\speech-transcription-emotion-analysis\core\pipeline.py", line 142, in process_audio
+    initial_summary_stats = self._calculate_emotion_summary(structured_data) # Use helper
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\filip\Documents\GitHub\personal-projects\speech-transcription-emotion-analysis\core\pipeline.py", line 215, in _calculate_emotion_summary
+    emo_numeric = [EMO_VAL.get(e, 0) for e in emos]
+                   ^^^^^^^
+NameError: name 'EMO_VAL' is not defined
+
+2025-04-14 11:31:06,577 - INFO - Job 28207b45: Cleaning up...
+2025-04-14 11:33:56,734 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-04-14 11:33:56,779 - INFO - HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-04-14 11:33:56,793 - INFO - HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2025-04-14 11:34:07,610 - INFO - Job 47f47dfa started. Temp: output\job_20250414_113407_47f47dfa\temp, Output: output\job_20250414_113407_47f47dfa\results
+2025-04-14 11:34:07,610 - INFO - Job 47f47dfa: Input is a URL. Downloading...
+2025-04-14 11:34:13,845 - INFO - Job 47f47dfa: YouTube audio downloaded to output\job_20250414_113407_47f47dfa\temp\audio_input_20250414_113407.wav
+2025-04-14 11:34:13,845 - INFO - Running ffprobe duration check for: output\job_20250414_113407_47f47dfa\temp\audio_input_20250414_113407.wav
+2025-04-14 11:34:13,889 - INFO - Audio duration: 1625.362 seconds
+2025-04-14 11:34:13,889 - INFO - Job 47f47dfa: Running WhisperX (with --diarize) on output\job_20250414_113407_47f47dfa\temp\audio_input_20250414_113407.wav...
+2025-04-14 11:35:29,567 - INFO - Job 47f47dfa: WhisperX finished.
+2025-04-14 11:35:29,567 - INFO - Job 47f47dfa: Looking for WhisperX output: output\job_20250414_113407_47f47dfa\results\audio_input_20250414_113407.json
+2025-04-14 11:35:29,567 - INFO - Job 47f47dfa: Adding emotion analysis via convert_json_to_structured...
+2025-04-14 11:35:32,552 - INFO - Job 47f47dfa: Emotion analysis added.
+2025-04-14 11:35:32,552 - INFO - Job 47f47dfa: Saving structured transcript to output\job_20250414_113407_47f47dfa\results\structured_transcript.json
+2025-04-14 11:35:32,596 - INFO - Job 47f47dfa: Generating initial emotion summary...
+2025-04-14 11:35:32,598 - INFO - Saving emotion summary: output\job_20250414_113407_47f47dfa\results\emotion_summary_47f47dfa_initial.json, output\job_20250414_113407_47f47dfa\results\emotion_summary_47f47dfa_initial.csv
+2025-04-14 11:35:32,600 - INFO - Job 47f47dfa: Initial emotion summary saved.
+2025-04-14 11:35:32,600 - INFO - Job 47f47dfa: Creating results ZIP file (initial): output\results_20250414_113407_47f47dfa_bundle.zip
+2025-04-14 11:35:32,619 - INFO - Saving emotion summary: output\job_20250414_113407_47f47dfa\results\emotion_summary_47f47dfa_initial.json, output\job_20250414_113407_47f47dfa\results\emotion_summary_47f47dfa_initial.csv
+2025-04-14 11:35:32,640 - INFO - Job 47f47dfa: Initial results ZIP created.
+2025-04-14 11:35:32,640 - INFO - Job 47f47dfa: Cleaning up...
