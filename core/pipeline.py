@@ -3,6 +3,7 @@ from core.transcription import Transcription
 from core.diarization import Diarization
 from core.emotion_analysis import EmotionAnalysis
 from core.file_management import FileManager
+from core.logging import log_info, log_error  # Import the logging functions
 from config.config import Config
 import os
 import json
