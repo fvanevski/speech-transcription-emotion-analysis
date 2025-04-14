@@ -49,6 +49,16 @@ class Pipeline:
             log_error(f"Emotion analysis error: {e}")
             return f"Error: {e}"
 
+    def download_audio_from_youtube(self, youtube_url):
+        try:
+            log_info("Starting YouTube audio download...")
+            audio_file = self.transcription.download_audio_from_youtube(youtube_url)
+            log_info("YouTube audio download completed.")
+            return audio_file
+        except Exception as e:
+            log_error(f"YouTube audio download error: {e}")
+            return f"Error: {e}"
+
     def save_emotion_summary(self, speaker_stats, output_dir, job_id):
         csv_path = os.path.join(output_dir, f"emotion_summary_{job_id}.csv")
         json_path = os.path.join(output_dir, f"emotion_summary_{job_id}.json")

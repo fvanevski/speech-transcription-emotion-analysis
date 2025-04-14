@@ -14,9 +14,20 @@ class UI:
 
             with gr.Tab("Transcription"):
                 input_file = gr.File(label="Upload Audio File")
+                youtube_url = gr.Textbox(label="Enter YouTube URL")
                 transcribe_btn = gr.Button("Transcribe")
                 transcribe_output = gr.Textbox(label="Transcription Result")
-                transcribe_btn.click(fn=self.pipeline.transcribe, inputs=[input_file], outputs=[transcribe_output])
+
+                def transcribe_wrapper(input_file, youtube_url):
+                    if input_file:
+                        return self.pipeline.transcribe(input_file.name)
+                    elif youtube_url:
+                        audio_file = self.pipeline.download_audio_from_youtube(youtube_url)
+                        return self.pipeline.transcribe(audio_file)
+                    else:
+                        return "Please provide either an audio file or a YouTube URL."
+
+                transcribe_btn.click(fn=transcribe_wrapper, inputs=[input_file, youtube_url], outputs=[transcribe_output])
 
             with gr.Tab("Diarization"):
                 input_file = gr.File(label="Upload Audio File")
