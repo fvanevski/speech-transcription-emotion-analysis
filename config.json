@@ -1,0 +1,6 @@
+{
+  "output_dir": "output",
+  "temp_dir": "temp",
+  "batch_size": 10,
+  "log_level": "INFO"
+}

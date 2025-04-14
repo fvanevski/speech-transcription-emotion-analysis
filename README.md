@@ -1,110 +1,100 @@
-# speech-transcription-emotion-analysis
-Speech Transcription and Emotion Analysis System
+# Speech Transcription and Emotion Analysis
 
-This project is a modular Python-based system for speech transcription, speaker diarization, and emotion analysis. It uses WhisperX for transcription and diarization, and BERT for emotion analysis. The system also includes a user-friendly interface built with Gradio.
+    ## Overview
+    This project provides a unified pipeline for speech transcription, diarization, and emotion analysis using WhisperX and BERT. It includes a Gradio-based UI for user interaction.
 
-Features
-Speech Transcription: Converts audio input (YouTube links or uploaded files) into text.
-Speaker Diarization: Identifies and separates speakers in the audio.
-Emotion Analysis: Analyzes the emotional tone of each segment using BERT.
-Batch Processing: Supports processing multiple audio files or URLs.
-Speaker Relabeling: Allows users to relabel speakers in the transcript.
-User Interface: Provides an intuitive Gradio-based UI for interaction.
-Error Handling and Logging: Includes robust error handling and detailed logging.
-Project Structure
-project-root/
-├── core/
-│   ├── transcription.py        # Core transcription and diarization logic
-│   ├── emotion_analysis.py     # Emotion analysis pipeline
-│   └── utils.py                # Utility functions (e.g., file management, logging)
-├── ui/
-│   └── gradio_interface.py     # Gradio-based user interface
-├── postprocessing/
-│   └── speaker_relabeling.py   # Speaker relabeling logic
-├── logs/                       # Log files
-├── requirements.txt            # Python dependencies
-└── README.md                   # Project documentation
+    ## Features
+    - Transcription using WhisperX
+    - Diarization to identify speakers
+    - Emotion analysis using BERT
+    - Post-processing for speaker labeling and emotion summary
+    - Batch processing support
+    - Robust error handling and logging
 
-Installation
+    ## Installation
+    1. Clone the repository:
+       ```sh
+       git clone https://github.com/your-username/speech-transcription-system.git
+       cd speech-transcription-system
+       ```
+    2. Create and activate a virtual environment:
+       ```sh
+       virtualenv venv
+       .\venv\Scripts\activate  # On Windows
+       source venv/bin/activate  # On macOS and Linux
+       ```
+    3. Install dependencies:
+       ```sh
+       pip install -r requirements.txt
+       ```
 
-Clone the repository:
+    ## Usage
+    1. Run the application:
+       ```sh
+       python main.py
+       ```
+    2. Open the Gradio UI in your web browser and follow the instructions to upload files and perform tasks.
 
-git clone https://github.com/your-username/speech-transcription-emotion-analysis.git
-cd speech-transcription-emotion-analysis
+    ## Directory Structure
+    ```
+    speech_transcription_system/
+    ├── config/
+    │   └── config.py
+    ├── core/
+    │   ├── __init__.py
+    │   ├── transcription.py
+    │   ├── diarization.py
+    │   ├── emotion_analysis.py
+    │   ├── file_management.py
+    │   └── utils.py
+    ├── ui/
+    │   ├── __init__.py
+    │   ├── main_gui.py
+    │   └── postprocess_gui.py
+    ├── logs/
+    ├── temp/
+    ├── output/
+    ├── requirements.txt
+    └── main.py
+    ```
 
+    ## Configuration
+    - `config.json`: Configuration file for output directories, batch size, and log level.
 
-Create a virtual environment (optional but recommended):
+    ## Contributing
+    Contributions are welcome! Please open an issue or submit a pull request.
 
-python3 -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+    ## License
+    This project is licensed under the MIT License.
+    ```
 
+#### 4. **Create a Pull Request**
 
-Install dependencies:
+- **Push Your Changes:**
+  - Ensure your changes are committed and pushed to the `refactor-core` branch:
+    ```sh
+    git add .
+    git commit -m "Refactor core modules and improve directory structure"
+    git push origin refactor-core
+    ```
 
-pip install -r requirements.txt
+- **Create a Pull Request:**
+  - Go to your GitHub repository.
+  - Click on the "New pull request" button.
+  - Select the `refactor-core` branch as the base branch and the `main` (or `master`) branch as the compare branch.
+  - Write a detailed description of the changes you made.
+  - Request a code review from your team or peers.
 
+### Additional Tips
 
-Install additional tools (e.g., yt-dlp, ffmpeg):
+- **Continuous Integration (CI):**
+  - Consider setting up a CI/CD pipeline to automate testing and deployment.
+  - Tools like GitHub Actions, GitLab CI, or Jenkins can be used for this purpose.
 
-yt-dlp: For downloading YouTube audio
-pip install yt-dlp
+- **Code Linting and Formatting:**
+  - Use tools like `flake8`, `black`, or `pylint` to ensure your code is well-formatted and follows best practices.
 
-ffmpeg: For audio conversion
-On Ubuntu/Debian:
-sudo apt install ffmpeg
+- **Documentation:**
+  - Consider using tools like Sphinx or MkDocs to generate comprehensive documentation for your project.
 
-On macOS (via Homebrew):
-brew install ffmpeg
-
-On Windows: Download FFmpeg
-Usage
-Running the Application
-
-Launch the Gradio interface:
-
-python ui/gradio_interface.py
-
-
-Open the provided URL in your browser to access the interface.
-
-Features in the Interface
-Transcription Tab:
-Input a YouTube URL or upload an audio file.
-Process the audio for transcription, diarization, and emotion analysis.
-Download the results as a ZIP file.
-Speaker Relabeling Tab:
-Upload a structured transcript JSON file.
-Relabel speakers and download the updated transcript.
-Batch Processing
-
-To process multiple audio files or URLs, use the batch processing feature in the Transcription tab. Enter multiple YouTube URLs (one per line) or upload multiple audio files.
-
-Logging
-
-Logs are stored in the logs/ directory. Check these files for detailed information about each transcription job.
-
-Contributing
-
-Contributions are welcome! To contribute:
-
-Fork the repository.
-Create a new branch for your feature or bug fix:
-git checkout -b feature-name
-
-Commit your changes:
-git commit -m "Add new feature"
-
-Push to your branch:
-git push origin feature-name
-
-Open a pull request.
-License
-
-This project is licensed under the MIT License. See the LICENSE file for details.
-
-Acknowledgments
-WhisperX for transcription and diarization.
-Hugging Face Transformers for emotion analysis.
-Gradio for the user interface.
-
-Feel free to reach out with any questions or suggestions!
+By following these steps, you can ensure that your refactored code is well-organized, thoroughly tested, and ready for integration into the main branch. If you have any more questions or need further assistance, feel free to ask!
