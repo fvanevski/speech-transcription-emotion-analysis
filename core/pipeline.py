@@ -7,6 +7,7 @@ import uuid
 import shutil
 import subprocess
 import traceback # <--- IMPORT ADDED
+import pandas as pd
 from pathlib import Path
 from datetime import datetime
 from collections import defaultdict, Counter
