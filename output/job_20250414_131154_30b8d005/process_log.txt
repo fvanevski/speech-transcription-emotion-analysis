@@ -1,0 +1,73 @@
+📄 Processing Job ID: 30b8d005
+Session ID: 20250414_131154
+Started: 2025-04-14 13:11:54.819222
+
+[20250414_131154] [youtube] Extracting URL: https://youtube.com/shorts/WQM4Zy6J4Po?si=gAeeJhUdfQ_OP8fb
+[20250414_131154] [youtube] WQM4Zy6J4Po: Downloading webpage
+[20250414_131154] [youtube] WQM4Zy6J4Po: Downloading tv client config
+[20250414_131154] [youtube] WQM4Zy6J4Po: Downloading player 179bab65-main
+[20250414_131154] [youtube] WQM4Zy6J4Po: Downloading tv player API JSON
+[20250414_131154] [youtube] WQM4Zy6J4Po: Downloading ios player API JSON
+[20250414_131154] [youtube] WQM4Zy6J4Po: Downloading m3u8 information
+[20250414_131154] [info] WQM4Zy6J4Po: Downloading 1 format(s): 251
+[20250414_131154] [download] Destination: output\job_20250414_131154_30b8d005\temp\audio_input_20250414_131154.webm
+[20250414_131154] 
+[20250414_131154] [download]   0.2% of  457.98KiB at  Unknown B/s ETA Unknown
+[20250414_131154] [download]   0.7% of  457.98KiB at    2.92MiB/s ETA 00:00  
+[20250414_131154] [download]   1.5% of  457.98KiB at    6.81MiB/s ETA 00:00
+[20250414_131154] [download]   3.3% of  457.98KiB at   14.59MiB/s ETA 00:00
+[20250414_131154] [download]   6.8% of  457.98KiB at    9.71MiB/s ETA 00:00
+[20250414_131154] [download]  13.8% of  457.98KiB at   12.25MiB/s ETA 00:00
+[20250414_131154] [download]  27.7% of  457.98KiB at   13.77MiB/s ETA 00:00
+[20250414_131154] [download]  55.7% of  457.98KiB at   15.31MiB/s ETA 00:00
+[20250414_131154] [download] 100.0% of  457.98KiB at   16.82MiB/s ETA 00:00
+[20250414_131154] [download] 100% of  457.98KiB in 00:00:00 at 4.99MiB/s   
+[20250414_131154] ffmpeg version 7.1.1-essentials_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+[20250414_131154]   built with gcc 14.2.0 (Rev1, Built by MSYS2 project)
+[20250414_131154]   configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-zlib --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-sdl2 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libaom --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libgme --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libtheora --enable-libvo-amrwbenc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-librubberband
+[20250414_131154]   libavutil      59. 39.100 / 59. 39.100
+[20250414_131154]   libavcodec     61. 19.101 / 61. 19.101
+[20250414_131154]   libavformat    61.  7.100 / 61.  7.100
+[20250414_131154]   libavdevice    61.  3.100 / 61.  3.100
+[20250414_131154]   libavfilter    10.  4.100 / 10.  4.100
+[20250414_131154]   libswscale      8.  3.100 /  8.  3.100
+[20250414_131154]   libswresample   5.  3.100 /  5.  3.100
+[20250414_131154]   libpostproc    58.  3.100 / 58.  3.100
+[20250414_131154] Input #0, matroska,webm, from 'output\job_20250414_131154_30b8d005\temp\audio_input_20250414_131154.webm':
+[20250414_131154]   Metadata:
+[20250414_131154]     encoder         : google/video-file
+[20250414_131154]   Duration: 00:00:35.40, start: -0.007000, bitrate: 105 kb/s
+[20250414_131154]   Stream #0:0(eng): Audio: opus, 48000 Hz, stereo, fltp (default)
+[20250414_131154] Stream mapping:
+[20250414_131154]   Stream #0:0 -> #0:0 (opus (native) -> pcm_s16le (native))
+[20250414_131154] Press [q] to stop, [?] for help
+[20250414_131154] Output #0, wav, to 'output\job_20250414_131154_30b8d005\temp\audio_input_20250414_131154.wav':
+[20250414_131154]   Metadata:
+[20250414_131154]     ISFT            : Lavf61.7.100
+[20250414_131154]   Stream #0:0(eng): Audio: pcm_s16le ([1][0][0][0] / 0x0001), 16000 Hz, mono, s16, 256 kb/s (default)
+[20250414_131154]       Metadata:
+[20250414_131154]         encoder         : Lavc61.19.101 pcm_s16le
+[20250414_131154] [out#0/wav @ 000002b63c354d40] video:0KiB audio:1105KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.006890%
+[20250414_131154] size=    1106KiB time=00:00:35.38 bitrate= 256.0kbits/s speed= 721x    
+[20250414_131154] C:\Users\filip\AppData\Local\Programs\Python\Python312\Lib\inspect.py:1000: UserWarning: Module 'speechbrain.pretrained' was deprecated, redirecting to 'speechbrain.inference'. Please update your script. This is a change from SpeechBrain 1.0. See: https://github.com/speechbrain/speechbrain/releases/tag/v1.0.0
+[20250414_131154]   if ismodule(module) and hasattr(module, '__file__'):
+[20250414_131154] Lightning automatically upgraded your loaded checkpoint from v1.5.4 to v2.5.1. To apply the upgrade to your files permanently, run `python -m pytorch_lightning.utilities.upgrade_checkpoint C:\Users\filip\Documents\GitHub\personal-projects\speech-transcription-emotion-analysis\venv\Lib\site-packages\whisperx\assets\pytorch_model.bin`
+[20250414_131154] C:\Users\filip\Documents\GitHub\personal-projects\speech-transcription-emotion-analysis\venv\Lib\site-packages\pyannote\audio\utils\reproducibility.py:74: ReproducibilityWarning: TensorFloat-32 (TF32) has been disabled as it might lead to reproducibility issues and lower accuracy.
+[20250414_131154] It can be re-enabled by calling
+[20250414_131154]    >>> import torch
+[20250414_131154]    >>> torch.backends.cuda.matmul.allow_tf32 = True
+[20250414_131154]    >>> torch.backends.cudnn.allow_tf32 = True
+[20250414_131154] See https://github.com/pyannote/pyannote-audio/issues/1370 for more details.
+[20250414_131154] 
+[20250414_131154]   warnings.warn(
+[20250414_131154] C:\Users\filip\Documents\GitHub\personal-projects\speech-transcription-emotion-analysis\venv\Lib\site-packages\pyannote\audio\models\blocks\pooling.py:104: UserWarning: std(): degrees of freedom is <= 0. Correction should be strictly less than the reduction factor (input numel divided by output numel). (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\aten\src\ATen\native\ReduceOps.cpp:1831.)
+[20250414_131154]   std = sequences.std(dim=-1, correction=1)
+[20250414_131154] No language specified, language will be first be detected for each audio file (increases inference time).
+[20250414_131154] Model was trained with pyannote.audio 0.0.1, yours is 3.3.2. Bad things might happen unless you revert pyannote.audio to 0.x.
+[20250414_131154] Model was trained with torch 1.10.0+cu102, yours is 2.6.0+cu126. Bad things might happen unless you revert torch to 1.x.
+[20250414_131154] >>Performing transcription...
+[20250414_131154] Detected language: en (1.00) in first 30s of audio...
+[20250414_131154] Transcript: [0.217 --> 25.107]  Please, whatever you do, do not let him cook anymore. Please do not let him cook. He does not even know what groceries are. He thinks they're called groceries and he doesn't know what the supermarket is. He went inside there and he looked lost and he sure as hell doesn't know how to do economic policy or trade policy. Please do not let him cook. Don't let him cook. Please do not let him cook. Please, please. He's going to burn the whole house down if he cooks.
+[20250414_131154] Transcript: [25.597 --> 35.266]  He can cook with the oven or the grill, but he's cooking by burning the house down. He's going to use the fire from our house that's burning down to cook. Don't cook with the house burning. You use, you know, be a little smarter guys.
+[20250414_131154] >>Performing alignment...
+[20250414_131154] >>Performing diarization...

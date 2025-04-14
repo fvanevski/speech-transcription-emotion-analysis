@@ -1,0 +1,1456 @@
+{
+  "9": {
+    "total_segments": 227,
+    "emotion_transitions": 138,
+    "dominant_emotion": "joy",
+    "emotion_volatility": 1.387,
+    "emotion_score_mean": -0.273,
+    "emotion_timeline": [
+      {
+        "time": 4.557,
+        "emotion": "anger"
+      },
+      {
+        "time": 9.539,
+        "emotion": "sadness"
+      },
+      {
+        "time": 16.823,
+        "emotion": "anger"
+      },
+      {
+        "time": 20.725,
+        "emotion": "fear"
+      },
+      {
+        "time": 31.75,
+        "emotion": "joy"
+      },
+      {
+        "time": 36.998,
+        "emotion": "anger"
+      },
+      {
+        "time": 57.202,
+        "emotion": "joy"
+      },
+      {
+        "time": 64.747,
+        "emotion": "joy"
+      },
+      {
+        "time": 65.787,
+        "emotion": "joy"
+      },
+      {
+        "time": 66.528,
+        "emotion": "joy"
+      },
+      {
+        "time": 67.788,
+        "emotion": "joy"
+      },
+      {
+        "time": 70.81,
+        "emotion": "fear"
+      },
+      {
+        "time": 82.035,
+        "emotion": "joy"
+      },
+      {
+        "time": 92.48,
+        "emotion": "fear"
+      },
+      {
+        "time": 123.27,
+        "emotion": "joy"
+      },
+      {
+        "time": 123.61,
+        "emotion": "joy"
+      },
+      {
+        "time": 128.992,
+        "emotion": "joy"
+      },
+      {
+        "time": 130.293,
+        "emotion": "joy"
+      },
+      {
+        "time": 131.573,
+        "emotion": "joy"
+      },
+      {
+        "time": 142.222,
+        "emotion": "sadness"
+      },
+      {
+        "time": 145.785,
+        "emotion": "sadness"
+      },
+      {
+        "time": 151.089,
+        "emotion": "joy"
+      },
+      {
+        "time": 155.445,
+        "emotion": "anger"
+      },
+      {
+        "time": 157.707,
+        "emotion": "joy"
+      },
+      {
+        "time": 164.252,
+        "emotion": "sadness"
+      },
+      {
+        "time": 215.359,
+        "emotion": "surprise"
+      },
+      {
+        "time": 224.123,
+        "emotion": "anger"
+      },
+      {
+        "time": 233.627,
+        "emotion": "joy"
+      },
+      {
+        "time": 246.976,
+        "emotion": "joy"
+      },
+      {
+        "time": 247.616,
+        "emotion": "fear"
+      },
+      {
+        "time": 267.989,
+        "emotion": "joy"
+      },
+      {
+        "time": 269.189,
+        "emotion": "fear"
+      },
+      {
+        "time": 271.69,
+        "emotion": "fear"
+      },
+      {
+        "time": 274.57,
+        "emotion": "joy"
+      },
+      {
+        "time": 280.291,
+        "emotion": "joy"
+      },
+      {
+        "time": 282.312,
+        "emotion": "fear"
+      },
+      {
+        "time": 288.793,
+        "emotion": "joy"
+      },
+      {
+        "time": 289.333,
+        "emotion": "fear"
+      },
+      {
+        "time": 294.837,
+        "emotion": "sadness"
+      },
+      {
+        "time": 302.961,
+        "emotion": "joy"
+      },
+      {
+        "time": 307.804,
+        "emotion": "joy"
+      },
+      {
+        "time": 310.445,
+        "emotion": "joy"
+      },
+      {
+        "time": 313.267,
+        "emotion": "anger"
+      },
+      {
+        "time": 322.753,
+        "emotion": "joy"
+      },
+      {
+        "time": 333.004,
+        "emotion": "anger"
+      },
+      {
+        "time": 344.674,
+        "emotion": "joy"
+      },
+      {
+        "time": 350.819,
+        "emotion": "anger"
+      },
+      {
+        "time": 352.22,
+        "emotion": "anger"
+      },
+      {
+        "time": 379.491,
+        "emotion": "joy"
+      },
+      {
+        "time": 385.353,
+        "emotion": "joy"
+      },
+      {
+        "time": 387.535,
+        "emotion": "anger"
+      },
+      {
+        "time": 390.578,
+        "emotion": "anger"
+      },
+      {
+        "time": 395.201,
+        "emotion": "joy"
+      },
+      {
+        "time": 400.626,
+        "emotion": "joy"
+      },
+      {
+        "time": 405.35,
+        "emotion": "anger"
+      },
+      {
+        "time": 419.76,
+        "emotion": "joy"
+      },
+      {
+        "time": 425.324,
+        "emotion": "joy"
+      },
+      {
+        "time": 437.573,
+        "emotion": "anger"
+      },
+      {
+        "time": 450.844,
+        "emotion": "joy"
+      },
+      {
+        "time": 506.978,
+        "emotion": "anger"
+      },
+      {
+        "time": 510.42,
+        "emotion": "joy"
+      },
+      {
+        "time": 511.72,
+        "emotion": "fear"
+      },
+      {
+        "time": 515.603,
+        "emotion": "anger"
+      },
+      {
+        "time": 522.006,
+        "emotion": "anger"
+      },
+      {
+        "time": 523.307,
+        "emotion": "joy"
+      },
+      {
+        "time": 525.509,
+        "emotion": "joy"
+      },
+      {
+        "time": 529.147,
+        "emotion": "anger"
+      },
+      {
+        "time": 536.508,
+        "emotion": "joy"
+      },
+      {
+        "time": 538.449,
+        "emotion": "anger"
+      },
+      {
+        "time": 550.811,
+        "emotion": "joy"
+      },
+      {
+        "time": 553.932,
+        "emotion": "joy"
+      },
+      {
+        "time": 559.033,
+        "emotion": "joy"
+      },
+      {
+        "time": 567.355,
+        "emotion": "joy"
+      },
+      {
+        "time": 577.017,
+        "emotion": "joy"
+      },
+      {
+        "time": 582.578,
+        "emotion": "joy"
+      },
+      {
+        "time": 608.907,
+        "emotion": "joy"
+      },
+      {
+        "time": 609.668,
+        "emotion": "joy"
+      },
+      {
+        "time": 616.634,
+        "emotion": "joy"
+      },
+      {
+        "time": 621.619,
+        "emotion": "fear"
+      },
+      {
+        "time": 631.972,
+        "emotion": "joy"
+      },
+      {
+        "time": 639.995,
+        "emotion": "joy"
+      },
+      {
+        "time": 642.236,
+        "emotion": "anger"
+      },
+      {
+        "time": 660.317,
+        "emotion": "anger"
+      },
+      {
+        "time": 661.358,
+        "emotion": "joy"
+      },
+      {
+        "time": 664.678,
+        "emotion": "joy"
+      },
+      {
+        "time": 668.279,
+        "emotion": "anger"
+      },
+      {
+        "time": 670.92,
+        "emotion": "anger"
+      },
+      {
+        "time": 672.34,
+        "emotion": "joy"
+      },
+      {
+        "time": 675.743,
+        "emotion": "anger"
+      },
+      {
+        "time": 676.764,
+        "emotion": "joy"
+      },
+      {
+        "time": 679.866,
+        "emotion": "anger"
+      },
+      {
+        "time": 680.686,
+        "emotion": "joy"
+      },
+      {
+        "time": 685.01,
+        "emotion": "joy"
+      },
+      {
+        "time": 690.474,
+        "emotion": "joy"
+      },
+      {
+        "time": 693.496,
+        "emotion": "joy"
+      },
+      {
+        "time": 695.53,
+        "emotion": "anger"
+      },
+      {
+        "time": 721.844,
+        "emotion": "joy"
+      },
+      {
+        "time": 722.804,
+        "emotion": "anger"
+      },
+      {
+        "time": 727.306,
+        "emotion": "anger"
+      },
+      {
+        "time": 740.732,
+        "emotion": "anger"
+      },
+      {
+        "time": 742.133,
+        "emotion": "joy"
+      },
+      {
+        "time": 746.299,
+        "emotion": "anger"
+      },
+      {
+        "time": 752.208,
+        "emotion": "joy"
+      },
+      {
+        "time": 757.415,
+        "emotion": "joy"
+      },
+      {
+        "time": 763.117,
+        "emotion": "sadness"
+      },
+      {
+        "time": 773.28,
+        "emotion": "sadness"
+      },
+      {
+        "time": 780.103,
+        "emotion": "joy"
+      },
+      {
+        "time": 781.572,
+        "emotion": "joy"
+      },
+      {
+        "time": 794.819,
+        "emotion": "sadness"
+      },
+      {
+        "time": 799.882,
+        "emotion": "joy"
+      },
+      {
+        "time": 800.763,
+        "emotion": "joy"
+      },
+      {
+        "time": 806.387,
+        "emotion": "joy"
+      },
+      {
+        "time": 815.313,
+        "emotion": "sadness"
+      },
+      {
+        "time": 824.199,
+        "emotion": "fear"
+      },
+      {
+        "time": 837.063,
+        "emotion": "sadness"
+      },
+      {
+        "time": 847.687,
+        "emotion": "surprise"
+      },
+      {
+        "time": 854.95,
+        "emotion": "anger"
+      },
+      {
+        "time": 866.523,
+        "emotion": "sadness"
+      },
+      {
+        "time": 891.594,
+        "emotion": "joy"
+      },
+      {
+        "time": 895.378,
+        "emotion": "anger"
+      },
+      {
+        "time": 896.48,
+        "emotion": "surprise"
+      },
+      {
+        "time": 904.889,
+        "emotion": "sadness"
+      },
+      {
+        "time": 909.294,
+        "emotion": "anger"
+      },
+      {
+        "time": 910.415,
+        "emotion": "joy"
+      },
+      {
+        "time": 914.197,
+        "emotion": "anger"
+      },
+      {
+        "time": 922.321,
+        "emotion": "joy"
+      },
+      {
+        "time": 931.102,
+        "emotion": "joy"
+      },
+      {
+        "time": 952.275,
+        "emotion": "surprise"
+      },
+      {
+        "time": 970.434,
+        "emotion": "joy"
+      },
+      {
+        "time": 975.959,
+        "emotion": "anger"
+      },
+      {
+        "time": 986.95,
+        "emotion": "anger"
+      },
+      {
+        "time": 987.971,
+        "emotion": "anger"
+      },
+      {
+        "time": 993.756,
+        "emotion": "joy"
+      },
+      {
+        "time": 996.983,
+        "emotion": "joy"
+      },
+      {
+        "time": 1003.384,
+        "emotion": "anger"
+      },
+      {
+        "time": 1013.347,
+        "emotion": "joy"
+      },
+      {
+        "time": 1022.049,
+        "emotion": "anger"
+      },
+      {
+        "time": 1023.469,
+        "emotion": "joy"
+      },
+      {
+        "time": 1026.231,
+        "emotion": "anger"
+      },
+      {
+        "time": 1033.475,
+        "emotion": "joy"
+      },
+      {
+        "time": 1035.176,
+        "emotion": "fear"
+      },
+      {
+        "time": 1037.878,
+        "emotion": "joy"
+      },
+      {
+        "time": 1041.4,
+        "emotion": "anger"
+      },
+      {
+        "time": 1049.225,
+        "emotion": "joy"
+      },
+      {
+        "time": 1050.526,
+        "emotion": "joy"
+      },
+      {
+        "time": 1079.919,
+        "emotion": "joy"
+      },
+      {
+        "time": 1084.765,
+        "emotion": "joy"
+      },
+      {
+        "time": 1086.355,
+        "emotion": "joy"
+      },
+      {
+        "time": 1093.697,
+        "emotion": "anger"
+      },
+      {
+        "time": 1099.918,
+        "emotion": "joy"
+      },
+      {
+        "time": 1113.741,
+        "emotion": "joy"
+      },
+      {
+        "time": 1116.782,
+        "emotion": "anger"
+      },
+      {
+        "time": 1121.904,
+        "emotion": "joy"
+      },
+      {
+        "time": 1146.654,
+        "emotion": "anger"
+      },
+      {
+        "time": 1155.094,
+        "emotion": "anger"
+      },
+      {
+        "time": 1162.497,
+        "emotion": "anger"
+      },
+      {
+        "time": 1204.878,
+        "emotion": "joy"
+      },
+      {
+        "time": 1207.339,
+        "emotion": "joy"
+      },
+      {
+        "time": 1217.624,
+        "emotion": "joy"
+      },
+      {
+        "time": 1221.385,
+        "emotion": "joy"
+      },
+      {
+        "time": 1222.766,
+        "emotion": "joy"
+      },
+      {
+        "time": 1229.829,
+        "emotion": "joy"
+      },
+      {
+        "time": 1239.995,
+        "emotion": "joy"
+      },
+      {
+        "time": 1247.899,
+        "emotion": "sadness"
+      },
+      {
+        "time": 1252.081,
+        "emotion": "anger"
+      },
+      {
+        "time": 1268.79,
+        "emotion": "anger"
+      },
+      {
+        "time": 1274.133,
+        "emotion": "joy"
+      },
+      {
+        "time": 1278.836,
+        "emotion": "anger"
+      },
+      {
+        "time": 1280.037,
+        "emotion": "joy"
+      },
+      {
+        "time": 1287.223,
+        "emotion": "anger"
+      },
+      {
+        "time": 1297.532,
+        "emotion": "anger"
+      },
+      {
+        "time": 1299.053,
+        "emotion": "anger"
+      },
+      {
+        "time": 1301.534,
+        "emotion": "joy"
+      },
+      {
+        "time": 1309.178,
+        "emotion": "joy"
+      },
+      {
+        "time": 1310.139,
+        "emotion": "joy"
+      },
+      {
+        "time": 1315.061,
+        "emotion": "anger"
+      },
+      {
+        "time": 1317.489,
+        "emotion": "joy"
+      },
+      {
+        "time": 1318.93,
+        "emotion": "joy"
+      },
+      {
+        "time": 1320.972,
+        "emotion": "sadness"
+      },
+      {
+        "time": 1324.855,
+        "emotion": "anger"
+      },
+      {
+        "time": 1326.797,
+        "emotion": "anger"
+      },
+      {
+        "time": 1331.087,
+        "emotion": "joy"
+      },
+      {
+        "time": 1337.455,
+        "emotion": "joy"
+      },
+      {
+        "time": 1344.003,
+        "emotion": "anger"
+      },
+      {
+        "time": 1346.807,
+        "emotion": "joy"
+      },
+      {
+        "time": 1348.609,
+        "emotion": "joy"
+      },
+      {
+        "time": 1350.091,
+        "emotion": "joy"
+      },
+      {
+        "time": 1356.154,
+        "emotion": "sadness"
+      },
+      {
+        "time": 1367.378,
+        "emotion": "joy"
+      },
+      {
+        "time": 1370.279,
+        "emotion": "joy"
+      },
+      {
+        "time": 1373.441,
+        "emotion": "joy"
+      },
+      {
+        "time": 1406.818,
+        "emotion": "sadness"
+      },
+      {
+        "time": 1409.08,
+        "emotion": "sadness"
+      },
+      {
+        "time": 1413.664,
+        "emotion": "anger"
+      },
+      {
+        "time": 1417.367,
+        "emotion": "anger"
+      },
+      {
+        "time": 1424.073,
+        "emotion": "joy"
+      },
+      {
+        "time": 1425.314,
+        "emotion": "joy"
+      },
+      {
+        "time": 1430.5,
+        "emotion": "sadness"
+      },
+      {
+        "time": 1433.624,
+        "emotion": "joy"
+      },
+      {
+        "time": 1437.889,
+        "emotion": "sadness"
+      },
+      {
+        "time": 1442.595,
+        "emotion": "anger"
+      },
+      {
+        "time": 1451.102,
+        "emotion": "anger"
+      },
+      {
+        "time": 1453.684,
+        "emotion": "anger"
+      },
+      {
+        "time": 1455.065,
+        "emotion": "joy"
+      },
+      {
+        "time": 1458.708,
+        "emotion": "joy"
+      },
+      {
+        "time": 1464.493,
+        "emotion": "sadness"
+      },
+      {
+        "time": 1467.957,
+        "emotion": "anger"
+      },
+      {
+        "time": 1482.934,
+        "emotion": "anger"
+      },
+      {
+        "time": 1493.261,
+        "emotion": "anger"
+      },
+      {
+        "time": 1494.342,
+        "emotion": "anger"
+      },
+      {
+        "time": 1502.327,
+        "emotion": "anger"
+      },
+      {
+        "time": 1508.911,
+        "emotion": "joy"
+      },
+      {
+        "time": 1515.654,
+        "emotion": "anger"
+      },
+      {
+        "time": 1547.377,
+        "emotion": "sadness"
+      },
+      {
+        "time": 1551.4,
+        "emotion": "anger"
+      },
+      {
+        "time": 1560.106,
+        "emotion": "sadness"
+      },
+      {
+        "time": 1562.187,
+        "emotion": "anger"
+      },
+      {
+        "time": 1568.352,
+        "emotion": "joy"
+      },
+      {
+        "time": 1570.793,
+        "emotion": "anger"
+      },
+      {
+        "time": 1577.827,
+        "emotion": "joy"
+      },
+      {
+        "time": 1581.752,
+        "emotion": "joy"
+      },
+      {
+        "time": 1584.495,
+        "emotion": "joy"
+      },
+      {
+        "time": 1586.077,
+        "emotion": "joy"
+      },
+      {
+        "time": 1589.602,
+        "emotion": "joy"
+      },
+      {
+        "time": 1593.066,
+        "emotion": "joy"
+      },
+      {
+        "time": 1596.635,
+        "emotion": "anger"
+      },
+      {
+        "time": 1600.937,
+        "emotion": "anger"
+      }
+    ]
+  },
+  "6": {
+    "total_segments": 7,
+    "emotion_transitions": 4,
+    "dominant_emotion": "anger",
+    "emotion_volatility": 1.41,
+    "emotion_score_mean": -0.786,
+    "emotion_timeline": [
+      {
+        "time": 46.916,
+        "emotion": "love"
+      },
+      {
+        "time": 51.179,
+        "emotion": "anger"
+      },
+      {
+        "time": 54.04,
+        "emotion": "joy"
+      },
+      {
+        "time": 55.921,
+        "emotion": "joy"
+      },
+      {
+        "time": 258.667,
+        "emotion": "anger"
+      },
+      {
+        "time": 262.928,
+        "emotion": "anger"
+      },
+      {
+        "time": 265.128,
+        "emotion": "fear"
+      }
+    ]
+  },
+  "13": {
+    "total_segments": 1,
+    "emotion_transitions": 0,
+    "dominant_emotion": "anger",
+    "emotion_volatility": 0,
+    "emotion_score_mean": -2,
+    "emotion_timeline": [
+      {
+        "time": 102.574,
+        "emotion": "anger"
+      }
+    ]
+  },
+  "11": {
+    "total_segments": 4,
+    "emotion_transitions": 1,
+    "dominant_emotion": "anger",
+    "emotion_volatility": 1.732,
+    "emotion_score_mean": -0.5,
+    "emotion_timeline": [
+      {
+        "time": 107.885,
+        "emotion": "anger"
+      },
+      {
+        "time": 116.028,
+        "emotion": "anger"
+      },
+      {
+        "time": 117.628,
+        "emotion": "joy"
+      },
+      {
+        "time": 121.91,
+        "emotion": "joy"
+      }
+    ]
+  },
+  "18": {
+    "total_segments": 4,
+    "emotion_transitions": 0,
+    "dominant_emotion": "joy",
+    "emotion_volatility": 0.0,
+    "emotion_score_mean": 1,
+    "emotion_timeline": [
+      {
+        "time": 181.686,
+        "emotion": "joy"
+      },
+      {
+        "time": 186.303,
+        "emotion": "joy"
+      },
+      {
+        "time": 187.084,
+        "emotion": "joy"
+      },
+      {
+        "time": 203.475,
+        "emotion": "joy"
+      }
+    ]
+  },
+  "4": {
+    "total_segments": 5,
+    "emotion_transitions": 2,
+    "dominant_emotion": "joy",
+    "emotion_volatility": 1.643,
+    "emotion_score_mean": -0.2,
+    "emotion_timeline": [
+      {
+        "time": 190.566,
+        "emotion": "joy"
+      },
+      {
+        "time": 191.547,
+        "emotion": "joy"
+      },
+      {
+        "time": 195.39,
+        "emotion": "anger"
+      },
+      {
+        "time": 208.559,
+        "emotion": "anger"
+      },
+      {
+        "time": 209.56,
+        "emotion": "joy"
+      }
+    ]
+  },
+  "7": {
+    "total_segments": 7,
+    "emotion_transitions": 6,
+    "dominant_emotion": "joy",
+    "emotion_volatility": 1.604,
+    "emotion_score_mean": -0.286,
+    "emotion_timeline": [
+      {
+        "time": 353.761,
+        "emotion": "joy"
+      },
+      {
+        "time": 354.562,
+        "emotion": "anger"
+      },
+      {
+        "time": 356.363,
+        "emotion": "joy"
+      },
+      {
+        "time": 361.813,
+        "emotion": "anger"
+      },
+      {
+        "time": 364.756,
+        "emotion": "joy"
+      },
+      {
+        "time": 366.718,
+        "emotion": "anger"
+      },
+      {
+        "time": 377.089,
+        "emotion": "joy"
+      }
+    ]
+  },
+  "17": {
+    "total_segments": 14,
+    "emotion_transitions": 8,
+    "dominant_emotion": "joy",
+    "emotion_volatility": 1.447,
+    "emotion_score_mean": -0.357,
+    "emotion_timeline": [
+      {
+        "time": 455.409,
+        "emotion": "anger"
+      },
+      {
+        "time": 462.892,
+        "emotion": "anger"
+      },
+      {
+        "time": 465.853,
+        "emotion": "anger"
+      },
+      {
+        "time": 469.894,
+        "emotion": "joy"
+      },
+      {
+        "time": 474.636,
+        "emotion": "sadness"
+      },
+      {
+        "time": 477.078,
+        "emotion": "joy"
+      },
+      {
+        "time": 480.76,
+        "emotion": "sadness"
+      },
+      {
+        "time": 484.063,
+        "emotion": "anger"
+      },
+      {
+        "time": 485.043,
+        "emotion": "joy"
+      },
+      {
+        "time": 489.927,
+        "emotion": "joy"
+      },
+      {
+        "time": 491.828,
+        "emotion": "joy"
+      },
+      {
+        "time": 493.269,
+        "emotion": "anger"
+      },
+      {
+        "time": 499.293,
+        "emotion": "joy"
+      },
+      {
+        "time": 505.517,
+        "emotion": "joy"
+      }
+    ]
+  },
+  "5": {
+    "total_segments": 6,
+    "emotion_transitions": 3,
+    "dominant_emotion": "joy",
+    "emotion_volatility": 1.329,
+    "emotion_score_mean": 0.167,
+    "emotion_timeline": [
+      {
+        "time": 587.142,
+        "emotion": "joy"
+      },
+      {
+        "time": 592.748,
+        "emotion": "anger"
+      },
+      {
+        "time": 594.849,
+        "emotion": "sadness"
+      },
+      {
+        "time": 597.312,
+        "emotion": "joy"
+      },
+      {
+        "time": 601.295,
+        "emotion": "joy"
+      },
+      {
+        "time": 604.718,
+        "emotion": "joy"
+      }
+    ]
+  },
+  "8": {
+    "total_segments": 12,
+    "emotion_transitions": 7,
+    "dominant_emotion": "joy",
+    "emotion_volatility": 1.545,
+    "emotion_score_mean": -0.25,
+    "emotion_timeline": [
+      {
+        "time": 649.455,
+        "emotion": "anger"
+      },
+      {
+        "time": 651.876,
+        "emotion": "joy"
+      },
+      {
+        "time": 654.096,
+        "emotion": "anger"
+      },
+      {
+        "time": 655.576,
+        "emotion": "anger"
+      },
+      {
+        "time": 656.937,
+        "emotion": "joy"
+      },
+      {
+        "time": 700.012,
+        "emotion": "joy"
+      },
+      {
+        "time": 701.833,
+        "emotion": "joy"
+      },
+      {
+        "time": 702.654,
+        "emotion": "joy"
+      },
+      {
+        "time": 706.556,
+        "emotion": "anger"
+      },
+      {
+        "time": 712.979,
+        "emotion": "joy"
+      },
+      {
+        "time": 716.501,
+        "emotion": "anger"
+      },
+      {
+        "time": 720.563,
+        "emotion": "joy"
+      }
+    ]
+  },
+  "10": {
+    "total_segments": 3,
+    "emotion_transitions": 2,
+    "dominant_emotion": "joy",
+    "emotion_volatility": 1.443,
+    "emotion_score_mean": 0.167,
+    "emotion_timeline": [
+      {
+        "time": 872.596,
+        "emotion": "joy"
+      },
+      {
+        "time": 877.522,
+        "emotion": "fear"
+      },
+      {
+        "time": 883.048,
+        "emotion": "joy"
+      }
+    ]
+  },
+  "1": {
+    "total_segments": 2,
+    "emotion_transitions": 0,
+    "dominant_emotion": "joy",
+    "emotion_volatility": 0.0,
+    "emotion_score_mean": 1,
+    "emotion_timeline": [
+      {
+        "time": 927.46,
+        "emotion": "joy"
+      },
+      {
+        "time": 928.741,
+        "emotion": "joy"
+      }
+    ]
+  },
+  "15": {
+    "total_segments": 6,
+    "emotion_transitions": 2,
+    "dominant_emotion": "joy",
+    "emotion_volatility": 1.225,
+    "emotion_score_mean": 0.5,
+    "emotion_timeline": [
+      {
+        "time": 936.685,
+        "emotion": "joy"
+      },
+      {
+        "time": 938.026,
+        "emotion": "joy"
+      },
+      {
+        "time": 940.267,
+        "emotion": "joy"
+      },
+      {
+        "time": 942.168,
+        "emotion": "anger"
+      },
+      {
+        "time": 945.35,
+        "emotion": "joy"
+      },
+      {
+        "time": 948.972,
+        "emotion": "joy"
+      }
+    ]
+  },
+  "12": {
+    "total_segments": 5,
+    "emotion_transitions": 0,
+    "dominant_emotion": "anger",
+    "emotion_volatility": 0.0,
+    "emotion_score_mean": -2,
+    "emotion_timeline": [
+      {
+        "time": 1056.808,
+        "emotion": "anger"
+      },
+      {
+        "time": 1062.17,
+        "emotion": "anger"
+      },
+      {
+        "time": 1064.791,
+        "emotion": "anger"
+      },
+      {
+        "time": 1070.514,
+        "emotion": "anger"
+      },
+      {
+        "time": 1076.616,
+        "emotion": "anger"
+      }
+    ]
+  },
+  "14": {
+    "total_segments": 4,
+    "emotion_transitions": 2,
+    "dominant_emotion": "joy",
+    "emotion_volatility": 1.0,
+    "emotion_score_mean": 0.5,
+    "emotion_timeline": [
+      {
+        "time": 1125.565,
+        "emotion": "joy"
+      },
+      {
+        "time": 1129.486,
+        "emotion": "sadness"
+      },
+      {
+        "time": 1137.649,
+        "emotion": "joy"
+      },
+      {
+        "time": 1145.511,
+        "emotion": "joy"
+      }
+    ]
+  },
+  "3": {
+    "total_segments": 6,
+    "emotion_transitions": 2,
+    "dominant_emotion": "anger",
+    "emotion_volatility": 1.225,
+    "emotion_score_mean": -1.5,
+    "emotion_timeline": [
+      {
+        "time": 1168.18,
+        "emotion": "anger"
+      },
+      {
+        "time": 1174.102,
+        "emotion": "anger"
+      },
+      {
+        "time": 1181.025,
+        "emotion": "anger"
+      },
+      {
+        "time": 1192.817,
+        "emotion": "joy"
+      },
+      {
+        "time": 1196.12,
+        "emotion": "anger"
+      },
+      {
+        "time": 1199.583,
+        "emotion": "anger"
+      }
+    ]
+  },
+  "2": {
+    "total_segments": 3,
+    "emotion_transitions": 1,
+    "dominant_emotion": "joy",
+    "emotion_volatility": 1.155,
+    "emotion_score_mean": 0.333,
+    "emotion_timeline": [
+      {
+        "time": 1379.315,
+        "emotion": "joy"
+      },
+      {
+        "time": 1384.096,
+        "emotion": "joy"
+      },
+      {
+        "time": 1400.842,
+        "emotion": "sadness"
+      }
+    ]
+  },
+  "16": {
+    "total_segments": 7,
+    "emotion_transitions": 4,
+    "dominant_emotion": "anger",
+    "emotion_volatility": 1.604,
+    "emotion_score_mean": -0.714,
+    "emotion_timeline": [
+      {
+        "time": 1525.417,
+        "emotion": "anger"
+      },
+      {
+        "time": 1527.719,
+        "emotion": "joy"
+      },
+      {
+        "time": 1531.982,
+        "emotion": "anger"
+      },
+      {
+        "time": 1537.186,
+        "emotion": "anger"
+      },
+      {
+        "time": 1541.93,
+        "emotion": "joy"
+      },
+      {
+        "time": 1543.251,
+        "emotion": "joy"
+      },
+      {
+        "time": 1544.231,
+        "emotion": "anger"
+      }
+    ]
+  }
+}
