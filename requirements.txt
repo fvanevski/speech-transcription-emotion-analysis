@@ -11,6 +11,7 @@ whisperx
 transformers
 gradio
 matplotlib # For plotting
+pandas
 yt_dlp # For YouTube downloads
 
 # Diarization dependency (using development version from Git)

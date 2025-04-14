@@ -280,7 +280,7 @@ class Pipeline:
             log_info(f"Applying speaker mapping: {speaker_mapping}")
 
             # --- Apply Mapping and Save Relabeled JSON ---
-            with open(structured_json_path, "r", encoding="utf-8") as jf: data = json.load(f)
+            with open(structured_json_path, "r", encoding="utf-8") as jf: data = json.load(jf)
             modified_count = 0
             if speaker_mapping:
                  for seg in data:

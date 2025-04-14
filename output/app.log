@@ -132,3 +132,20 @@ NameError: name 'EMO_VAL' is not defined
                                          ^^
 NameError: name 'pd' is not defined
 
+2025-04-14 12:40:10,549 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-04-14 12:40:10,598 - INFO - HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-04-14 12:40:10,610 - INFO - HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2025-04-14 12:40:35,726 - INFO - Job 9c78be66 started. Output dir: output\job_20250414_124035_9c78be66
+2025-04-14 12:40:41,896 - INFO - Running ffprobe duration check for: output\job_20250414_124035_9c78be66\temp\audio_input_20250414_124035.wav
+2025-04-14 12:40:41,941 - INFO - Audio duration: 1625.362 seconds
+2025-04-14 12:42:01,281 - INFO - Job 9c78be66: Found 18 unique speakers.
+2025-04-14 12:42:01,281 - INFO - Job 9c78be66: Cleaning up temporary files...
+2025-04-14 12:43:14,455 - INFO - Starting relabeling and finalization for: output\job_20250414_124035_9c78be66\structured_transcript.json
+2025-04-14 12:43:14,456 - INFO - Applying speaker mapping: {'SPEAKER_00': '1', 'SPEAKER_01': '2', 'SPEAKER_02': '3', 'SPEAKER_03': '4', 'SPEAKER_04': '5', 'SPEAKER_05': '6', 'SPEAKER_06': '7', 'SPEAKER_07': '8', 'SPEAKER_08': '9', 'SPEAKER_09': '10', 'SPEAKER_10': '11', 'SPEAKER_11': '12', 'SPEAKER_12': '13', 'SPEAKER_13': '14', 'SPEAKER_14': '15', 'SPEAKER_15': '16', 'SPEAKER_16': '17', 'SPEAKER_17': '18'}
+2025-04-14 12:43:14,462 - ERROR - \u274c Failed during relabeling/finalization for output\job_20250414_124035_9c78be66\structured_transcript.json: cannot access local variable 'f' where it is not associated with a value
+2025-04-14 12:43:14,463 - ERROR - Traceback (most recent call last):
+  File "C:\Users\filip\Documents\GitHub\personal-projects\speech-transcription-emotion-analysis\core\pipeline.py", line 283, in relabel_and_finalize
+    with open(structured_json_path, "r", encoding="utf-8") as jf: data = json.load(f)
+                                                                                   ^
+UnboundLocalError: cannot access local variable 'f' where it is not associated with a value
+
