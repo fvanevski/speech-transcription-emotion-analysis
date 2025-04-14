@@ -1,47 +1,71 @@
 # ui/main_gui.py
 import gradio as gr
 from core.pipeline import Pipeline
-from config.config import Config
+# Assuming Config is needed for Pipeline initialization indirectly
+# from config.config import Config
 
 class UI:
     def __init__(self, config):
         self.config = config
+        # Initialize the pipeline which now handles the full process
         self.pipeline = Pipeline(config)
 
     def interface_ui(self):
         with gr.Blocks() as demo:
             gr.Markdown("## Speech Transcription and Emotion Analysis")
 
-            with gr.Tab("Transcription"):
-                input_file = gr.File(label="Upload Audio File")
-                youtube_url = gr.Textbox(label="Enter YouTube URL")
-                transcribe_btn = gr.Button("Transcribe")
-                transcribe_output = gr.Textbox(label="Transcription Result")
+            # Consolidate into a single main processing tab
+            with gr.Tab("Process Audio"):
+                gr.Markdown("Upload an audio file OR enter a YouTube URL to transcribe, diarize, and analyze emotion.")
+                input_file = gr.File(label="Upload Audio File (.wav, .mp3, etc.)")
+                youtube_url = gr.Textbox(label="Or Enter YouTube URL")
+                process_btn = gr.Button("Process Audio") # Renamed button
 
-                def transcribe_wrapper(input_file, youtube_url):
-                    if input_file:
-                        return self.pipeline.transcribe(input_file.name)
-                    elif youtube_url:
-                        audio_file = self.pipeline.download_audio_from_youtube(youtube_url)
-                        return self.pipeline.transcribe(audio_file)
+                # Outputs: Status message and downloadable results file
+                status_output = gr.Textbox(label="Processing Status")
+                download_output = gr.File(label="Download Results (ZIP)")
+
+                # Wrapper function to call the consolidated pipeline method
+                def process_wrapper(input_file_obj, url):
+                    input_source = None
+                    if input_file_obj is not None:
+                        # Use the temporary path provided by Gradio File component
+                        input_source = input_file_obj.name
+                        print(f"Processing uploaded file: {input_source}") # Debug print
+                    elif url:
+                        input_source = url
+                        print(f"Processing YouTube URL: {input_source}") # Debug print
                     else:
-                        return "Please provide either an audio file or a YouTube URL."
+                        return "Please provide either an audio file or a YouTube URL.", None # Return tuple for both outputs
 
-                transcribe_btn.click(fn=transcribe_wrapper, inputs=[input_file, youtube_url], outputs=[transcribe_output])
+                    if input_source:
+                        try:
+                            # Call the main processing method in the pipeline
+                            zip_path, status_message = self.pipeline.process_audio(input_source)
+                            # Return status message for Textbox, zip_path for File component
+                            # If zip_path is None (due to error), File component will be empty
+                            return status_message, zip_path
+                        except Exception as e:
+                             # Catch unexpected errors during the call itself
+                             print(f"Error during pipeline processing: {e}") # Log error
+                             return f"An unexpected error occurred: {e}", None
+                    else:
+                        # This case should have been caught above, but as a fallback:
+                        return "No input provided.", None
 
-            with gr.Tab("Diarization"):
-                input_file = gr.File(label="Upload Audio File")
-                diarize_btn = gr.Button("Diarize")
-                diarize_output = gr.Textbox(label="Diarization Result")
-                diarize_btn.click(fn=self.pipeline.diarize, inputs=[input_file], outputs=[diarize_output])
 
-            with gr.Tab("Emotion Analysis"):
-                input_text = gr.Textbox(label="Enter Text")
-                analyze_btn = gr.Button("Analyze Emotion")
-                emotion_output = gr.Textbox(label="Emotion Result")
-                analyze_btn.click(fn=self.pipeline.analyze_emotion, inputs=[input_text], outputs=[emotion_output])
+                # Update button click handler
+                process_btn.click(
+                    fn=process_wrapper,
+                    inputs=[input_file, youtube_url],
+                    outputs=[status_output, download_output] # Map to both output components
+                )
+
+            # Removed Diarization Tab
+            # Removed Emotion Analysis Tab
 
         return demo
 
     def launch(self):
+        # Set share=True if you want a public link (useful for testing)
         self.interface_ui().launch()

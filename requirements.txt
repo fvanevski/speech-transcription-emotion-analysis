@@ -1,8 +1,19 @@
 # requirements.txt
+
+# For CUDA-enabled PyTorch (replace versions as needed)
+--index-url https://download.pytorch.org/whl/cu126
+torch==<TORCH_VERSION>+cu126
+torchaudio==<TORCHAUDIO_VERSION>+cu126
+torchvision==<TORCHVISION_VERSION>+cu126
+
+# Core dependencies
 whisperx
-yt_dlp
-torch
-torchvision
-torchaudio
 transformers
 gradio
+matplotlib # For plotting
+yt_dlp # For YouTube downloads
+
+# Diarization dependency (using development version from Git)
+git+https://github.com/pyannote/pyannote-audio.git
+
+# Add other direct dependencies below if any
