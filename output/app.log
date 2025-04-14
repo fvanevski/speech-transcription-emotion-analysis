@@ -149,3 +149,21 @@ NameError: name 'pd' is not defined
                                                                                    ^
 UnboundLocalError: cannot access local variable 'f' where it is not associated with a value
 
+2025-04-14 12:47:31,845 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-04-14 12:47:31,893 - INFO - HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-04-14 12:47:31,906 - INFO - HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2025-04-14 12:47:39,232 - INFO - Job 6dbaa5cc started. Output dir: output\job_20250414_124739_6dbaa5cc
+2025-04-14 12:47:45,912 - INFO - Running ffprobe duration check for: output\job_20250414_124739_6dbaa5cc\temp\audio_input_20250414_124739.wav
+2025-04-14 12:47:45,960 - INFO - Audio duration: 1625.362 seconds
+2025-04-14 12:49:05,277 - INFO - Job 6dbaa5cc: Found 18 unique speakers.
+2025-04-14 12:49:05,277 - INFO - Job 6dbaa5cc: Cleaning up temporary files...
+2025-04-14 12:49:42,786 - INFO - Starting relabeling and finalization for: output\job_20250414_124739_6dbaa5cc\structured_transcript.json
+2025-04-14 12:49:42,788 - INFO - Applying speaker mapping: {'SPEAKER_00': '1', 'SPEAKER_01': '2', 'SPEAKER_02': '3', 'SPEAKER_03': '4', 'SPEAKER_04': '5', 'SPEAKER_05': '6', 'SPEAKER_06': '7', 'SPEAKER_07': '8', 'SPEAKER_08': '9', 'SPEAKER_09': '10', 'SPEAKER_10': '11', 'SPEAKER_11': '12', 'SPEAKER_12': '13', 'SPEAKER_13': '14', 'SPEAKER_14': '15', 'SPEAKER_15': '16', 'SPEAKER_16': '17', 'SPEAKER_17': '18'}
+2025-04-14 12:49:42,801 - INFO - Applied labels to 323 segments.
+2025-04-14 12:49:42,801 - ERROR - \u274c Failed during relabeling/finalization for output\job_20250414_124739_6dbaa5cc\structured_transcript.json: name 'RELABELED_SUFFIX' is not defined
+2025-04-14 12:49:42,803 - ERROR - Traceback (most recent call last):
+  File "C:\Users\filip\Documents\GitHub\personal-projects\speech-transcription-emotion-analysis\core\pipeline.py", line 295, in relabel_and_finalize
+    relabeled_json_path = os.path.join(output_dir, STRUCTURED_TRANSCRIPT_NAME.replace('.json', RELABELED_SUFFIX))
+                                                                                               ^^^^^^^^^^^^^^^^
+NameError: name 'RELABELED_SUFFIX' is not defined. Did you mean: 'RELABELED_JSON_SUFFIX'?
+
