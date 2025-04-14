@@ -19,6 +19,12 @@ from core.file_management import FileManager
 from core.logging import log_info, log_error
 from core.plotting import generate_all_plots # <--- IMPORT PLOTTING FUNCTION
 
+# Define emotion values for quantitative summary (consistent with plotting.py)
+EMO_VAL = {'joy': 1, 'neutral': 0, 'sadness': -1, 'anger': -2, 'surprise': 0.5, 'fear': -1.5,
+           # Add defaults for statuses possibly returned by transcription.py's emotion analysis
+           'unknown': 0, 'analysis_skipped': 0, 'analysis_failed': 0, 'no_text': 0
+           }
+
 # Define constants for clarity
 LOG_FILE_NAME = "process_log.txt"
 STRUCTURED_TRANSCRIPT_NAME = "structured_transcript.json"
