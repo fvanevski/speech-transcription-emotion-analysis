@@ -6,6 +6,7 @@ import zipfile
 import uuid
 import shutil
 import subprocess
+import traceback
 from pathlib import Path
 from datetime import datetime
 from collections import defaultdict, Counter

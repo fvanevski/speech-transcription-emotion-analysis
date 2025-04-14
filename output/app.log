@@ -25,3 +25,31 @@
 2025-04-14 07:28:11,113 - INFO - YouTube audio download completed.
 2025-04-14 07:28:11,113 - INFO - Starting transcription...
 2025-04-14 07:28:11,113 - ERROR - Transcription error: 'Transcription' object has no attribute 'transcribe'
+2025-04-14 11:12:07,296 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-04-14 11:12:07,332 - INFO - HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-04-14 11:12:07,415 - INFO - HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2025-04-14 11:13:23,619 - INFO - Job 9ef85039 started. Temp: output\job_20250414_111323_9ef85039\temp, Output: output\job_20250414_111323_9ef85039\results
+2025-04-14 11:13:23,619 - INFO - Job 9ef85039: Input is a URL. Downloading...
+2025-04-14 11:13:30,009 - INFO - Job 9ef85039: YouTube audio downloaded to output\job_20250414_111323_9ef85039\temp\audio_input_20250414_111323.wav
+2025-04-14 11:13:30,009 - INFO - Running ffprobe duration check for: output\job_20250414_111323_9ef85039\temp\audio_input_20250414_111323.wav
+2025-04-14 11:13:30,141 - INFO - Audio duration: 1625.362 seconds
+2025-04-14 11:13:30,141 - INFO - Job 9ef85039: Running WhisperX (with --diarize) on output\job_20250414_111323_9ef85039\temp\audio_input_20250414_111323.wav...
+2025-04-14 11:13:41,393 - ERROR - \u274c Job 9ef85039 failed during processing: An error occurred while running command whisperx output\job_20250414_111323_9ef85039\temp\audio_input_20250414_111323.wav --model large-v2 --diarize --hf_token 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 --output_dir output\job_20250414_111323_9ef85039\results --output_format json --device cpu: Command failed with exit code 1: whisperx output\job_20250414_111323_9ef85039\temp\audio_input_20250414_111323.wav --model large-v2 --diarize --hf_token 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 --output_dir output\job_20250414_111323_9ef85039\results --output_format json --device cpu
+2025-04-14 11:13:41,393 - INFO - Job 9ef85039: Cleaning up...
+2025-04-14 11:19:33,471 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-04-14 11:19:33,516 - INFO - HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-04-14 11:19:33,528 - INFO - HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2025-04-14 11:20:07,593 - INFO - Job 0787685b started. Temp: output\job_20250414_112007_0787685b\temp, Output: output\job_20250414_112007_0787685b\results
+2025-04-14 11:20:07,593 - INFO - Job 0787685b: Input is a URL. Downloading...
+2025-04-14 11:20:13,899 - INFO - Job 0787685b: YouTube audio downloaded to output\job_20250414_112007_0787685b\temp\audio_input_20250414_112007.wav
+2025-04-14 11:20:13,899 - INFO - Running ffprobe duration check for: output\job_20250414_112007_0787685b\temp\audio_input_20250414_112007.wav
+2025-04-14 11:20:13,948 - INFO - Audio duration: 1625.362 seconds
+2025-04-14 11:20:13,948 - INFO - Job 0787685b: Running WhisperX (with --diarize) on output\job_20250414_112007_0787685b\temp\audio_input_20250414_112007.wav...
+2025-04-14 11:21:27,015 - INFO - Job 0787685b: WhisperX finished.
+2025-04-14 11:21:27,015 - INFO - Job 0787685b: Looking for WhisperX output: output\job_20250414_112007_0787685b\results\audio_input_20250414_112007.json
+2025-04-14 11:21:27,015 - INFO - Job 0787685b: Adding emotion analysis via convert_json_to_structured...
+2025-04-14 11:21:29,736 - INFO - Job 0787685b: Emotion analysis added.
+2025-04-14 11:21:29,736 - INFO - Job 0787685b: Saving structured transcript to output\job_20250414_112007_0787685b\results\structured_transcript.json
+2025-04-14 11:21:29,777 - INFO - Job 0787685b: Generating initial emotion summary...
+2025-04-14 11:21:29,778 - ERROR - \u274c Job 0787685b failed during processing: name 'EMO_VAL' is not defined
+2025-04-14 11:21:29,778 - INFO - Job 0787685b: Cleaning up...
