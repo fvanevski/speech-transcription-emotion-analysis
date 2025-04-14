@@ -1,0 +1,102 @@
+📄 Transcription Job ID: 9ef85039
+Session ID: 20250414_111323
+Started: 2025-04-14 11:13:23.617572
+
+[20250414_111323] [youtube] Extracting URL: https://youtu.be/5zQ0WewZY50?si=UmgLxy_ZJkvegry0
+[20250414_111323] [youtube] 5zQ0WewZY50: Downloading webpage
+[20250414_111323] [youtube] 5zQ0WewZY50: Downloading tv client config
+[20250414_111323] [youtube] 5zQ0WewZY50: Downloading player 179bab65-main
+[20250414_111323] [youtube] 5zQ0WewZY50: Downloading tv player API JSON
+[20250414_111323] [youtube] 5zQ0WewZY50: Downloading ios player API JSON
+[20250414_111323] [youtube] 5zQ0WewZY50: Downloading m3u8 information
+[20250414_111323] [info] 5zQ0WewZY50: Downloading 1 format(s): 251
+[20250414_111323] [download] Destination: output\job_20250414_111323_9ef85039\temp\audio_input_20250414_111323.webm
+[20250414_111323] 
+[20250414_111323] [download]   0.0% of   22.56MiB at  660.52KiB/s ETA 00:34
+[20250414_111323] [download]   0.0% of   22.56MiB at    1.94MiB/s ETA 00:11
+[20250414_111323] [download]   0.0% of   22.56MiB at    4.52MiB/s ETA 00:04
+[20250414_111323] [download]   0.1% of   22.56MiB at    9.68MiB/s ETA 00:02
+[20250414_111323] [download]   0.1% of   22.56MiB at   10.02MiB/s ETA 00:02
+[20250414_111323] [download]   0.3% of   22.56MiB at   20.36MiB/s ETA 00:01
+[20250414_111323] [download]   0.5% of   22.56MiB at   35.10MiB/s ETA 00:00
+[20250414_111323] [download]   1.1% of   22.56MiB at   61.55MiB/s ETA 00:00
+[20250414_111323] [download]   2.2% of   22.56MiB at   89.79MiB/s ETA 00:00
+[20250414_111323] [download]   4.4% of   22.56MiB at   86.15MiB/s ETA 00:00
+[20250414_111323] [download]   8.9% of   22.56MiB at   91.89MiB/s ETA 00:00
+[20250414_111323] [download]  17.7% of   22.56MiB at   92.80MiB/s ETA 00:00
+[20250414_111323] [download]  35.5% of   22.56MiB at   94.86MiB/s ETA 00:00
+[20250414_111323] [download]  43.8% of   22.56MiB at   96.72MiB/s ETA 00:00
+[20250414_111323] [download]  43.8% of   22.56MiB at  Unknown B/s ETA Unknown
+[20250414_111323] [download]  43.8% of   22.56MiB at  Unknown B/s ETA Unknown
+[20250414_111323] [download]  43.8% of   22.56MiB at    6.44MiB/s ETA 00:01  
+[20250414_111323] [download]  43.9% of   22.56MiB at   13.81MiB/s ETA 00:00
+[20250414_111323] [download]  43.9% of   22.56MiB at   28.53MiB/s ETA 00:00
+[20250414_111323] [download]  44.1% of   22.56MiB at   57.99MiB/s ETA 00:00
+[20250414_111323] [download]  44.3% of   22.56MiB at  116.90MiB/s ETA 00:00
+[20250414_111323] [download]  44.9% of   22.56MiB at   96.90MiB/s ETA 00:00
+[20250414_111323] [download]  46.0% of   22.56MiB at   97.70MiB/s ETA 00:00
+[20250414_111323] [download]  48.2% of   22.56MiB at  103.68MiB/s ETA 00:00
+[20250414_111323] [download]  52.6% of   22.56MiB at  103.55MiB/s ETA 00:00
+[20250414_111323] [download]  61.5% of   22.56MiB at  100.95MiB/s ETA 00:00
+[20250414_111323] [download]  79.3% of   22.56MiB at   92.42MiB/s ETA 00:00
+[20250414_111323] [download]  87.1% of   22.56MiB at   86.28MiB/s ETA 00:00
+[20250414_111323] [download]  87.1% of   22.56MiB at  Unknown B/s ETA Unknown
+[20250414_111323] [download]  87.1% of   22.56MiB at  Unknown B/s ETA Unknown
+[20250414_111323] [download]  87.2% of   22.56MiB at    6.76MiB/s ETA 00:00  
+[20250414_111323] [download]  87.2% of   22.56MiB at   14.48MiB/s ETA 00:00
+[20250414_111323] [download]  87.3% of   22.56MiB at   29.93MiB/s ETA 00:00
+[20250414_111323] [download]  87.4% of   22.56MiB at   60.82MiB/s ETA 00:00
+[20250414_111323] [download]  87.7% of   22.56MiB at   60.20MiB/s ETA 00:00
+[20250414_111323] [download]  88.2% of   22.56MiB at  120.87MiB/s ETA 00:00
+[20250414_111323] [download]  89.3% of   22.56MiB at   94.12MiB/s ETA 00:00
+[20250414_111323] [download]  91.6% of   22.56MiB at   97.74MiB/s ETA 00:00
+[20250414_111323] [download]  96.0% of   22.56MiB at   98.43MiB/s ETA 00:00
+[20250414_111323] [download] 100.0% of   22.56MiB at   98.77MiB/s ETA 00:00
+[20250414_111323] [download] 100% of   22.56MiB in 00:00:00 at 78.65MiB/s  
+[20250414_111323] ffmpeg version 7.1.1-essentials_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+[20250414_111323]   built with gcc 14.2.0 (Rev1, Built by MSYS2 project)
+[20250414_111323]   configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-zlib --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-sdl2 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libaom --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libgme --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libtheora --enable-libvo-amrwbenc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-librubberband
+[20250414_111323]   libavutil      59. 39.100 / 59. 39.100
+[20250414_111323]   libavcodec     61. 19.101 / 61. 19.101
+[20250414_111323]   libavformat    61.  7.100 / 61.  7.100
+[20250414_111323]   libavdevice    61.  3.100 / 61.  3.100
+[20250414_111323]   libavfilter    10.  4.100 / 10.  4.100
+[20250414_111323]   libswscale      8.  3.100 /  8.  3.100
+[20250414_111323]   libswresample   5.  3.100 /  5.  3.100
+[20250414_111323]   libpostproc    58.  3.100 / 58.  3.100
+[20250414_111323] Input #0, matroska,webm, from 'output\job_20250414_111323_9ef85039\temp\audio_input_20250414_111323.webm':
+[20250414_111323]   Metadata:
+[20250414_111323]     encoder         : google/video-file
+[20250414_111323]   Duration: 00:27:05.38, start: -0.007000, bitrate: 116 kb/s
+[20250414_111323]   Stream #0:0(eng): Audio: opus, 48000 Hz, stereo, fltp (default)
+[20250414_111323] Stream mapping:
+[20250414_111323]   Stream #0:0 -> #0:0 (opus (native) -> pcm_s16le (native))
+[20250414_111323] Press [q] to stop, [?] for help
+[20250414_111323] Output #0, wav, to 'output\job_20250414_111323_9ef85039\temp\audio_input_20250414_111323.wav':
+[20250414_111323]   Metadata:
+[20250414_111323]     ISFT            : Lavf61.7.100
+[20250414_111323]   Stream #0:0(eng): Audio: pcm_s16le ([1][0][0][0] / 0x0001), 16000 Hz, mono, s16, 256 kb/s (default)
+[20250414_111323]       Metadata:
+[20250414_111323]         encoder         : Lavc61.19.101 pcm_s16le
+[20250414_111323] size=   10752KiB time=00:05:47.51 bitrate= 253.5kbits/s speed= 679x    
+[20250414_111323] size=   21760KiB time=00:11:44.07 bitrate= 253.2kbits/s speed= 687x    
+[20250414_111323] size=   33024KiB time=00:17:37.27 bitrate= 255.9kbits/s speed= 686x    
+[20250414_111323] size=   44032KiB time=00:23:35.91 bitrate= 254.8kbits/s speed= 689x    
+[20250414_111323] [out#0/wav @ 000001bac0889700] video:0KiB audio:50793KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.000150%
+[20250414_111323] size=   50793KiB time=00:27:05.36 bitrate= 256.0kbits/s speed= 692x    
+[20250414_111323] Traceback (most recent call last):
+[20250414_111323]   File "<frozen runpy>", line 198, in _run_module_as_main
+[20250414_111323]   File "<frozen runpy>", line 88, in _run_code
+[20250414_111323]   File "C:\Users\filip\Documents\GitHub\personal-projects\speech-transcription-emotion-analysis\venv\Scripts\whisperx.exe\__main__.py", line 7, in <module>
+[20250414_111323]   File "C:\Users\filip\Documents\GitHub\personal-projects\speech-transcription-emotion-analysis\venv\Lib\site-packages\whisperx\transcribe.py", line 178, in cli
+[20250414_111323]     model = load_model(model_name, device=device, device_index=device_index, download_root=model_dir, compute_type=compute_type, language=args['language'], asr_options=asr_options, vad_options={"vad_onset": vad_onset, "vad_offset": vad_offset}, task=task, threads=faster_whisper_threads)
+[20250414_111323]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[20250414_111323]   File "C:\Users\filip\Documents\GitHub\personal-projects\speech-transcription-emotion-analysis\venv\Lib\site-packages\whisperx\asr.py", line 325, in load_model
+[20250414_111323]     model = model or WhisperModel(whisper_arch,
+[20250414_111323]                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[20250414_111323]   File "C:\Users\filip\Documents\GitHub\personal-projects\speech-transcription-emotion-analysis\venv\Lib\site-packages\faster_whisper\transcribe.py", line 634, in __init__
+[20250414_111323]     self.model = ctranslate2.models.Whisper(
+[20250414_111323]                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[20250414_111323] ValueError: Requested float16 compute type, but the target device or backend do not support efficient float16 computation.
+[20250414_111323] ERROR: Command failed with exit code 1: whisperx output\job_20250414_111323_9ef85039\temp\audio_input_20250414_111323.wav --model large-v2 --diarize --hf_token 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 --output_dir output\job_20250414_111323_9ef85039\results --output_format json --device cpu
+[20250414_111323] ERROR: An error occurred while running command whisperx output\job_20250414_111323_9ef85039\temp\audio_input_20250414_111323.wav --model large-v2 --diarize --hf_token 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 --output_dir output\job_20250414_111323_9ef85039\results --output_format json --device cpu: Command failed with exit code 1: whisperx output\job_20250414_111323_9ef85039\temp\audio_input_20250414_111323.wav --model large-v2 --diarize --hf_token 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 --output_dir output\job_20250414_111323_9ef85039\results --output_format json --device cpu
