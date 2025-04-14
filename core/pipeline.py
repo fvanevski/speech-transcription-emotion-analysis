@@ -3,7 +3,7 @@ from core.transcription import Transcription
 from core.diarization import Diarization
 from core.emotion_analysis import EmotionAnalysis
 from core.file_management import FileManager
-from core.logging import log_info, log_error  # Import the logging functions
+from core.logging import log_info, log_error
 from config.config import Config
 import os
 import json
@@ -60,6 +60,25 @@ class Pipeline:
             log_error(f"YouTube audio download error: {e}")
             return f"Error: {e}"
 
+    def run_whisperx(self, audio_path, output_dir, log_file, session_id):
+        try:
+            log_info("Starting WhisperX...")
+            self.transcription.run_whisperx(audio_path, output_dir, log_file, session_id)
+            log_info("WhisperX completed.")
+        except Exception as e:
+            log_error(f"WhisperX error: {e}")
+            return f"Error: {e}"
+
+    def convert_json_to_structured(self, json_path):
+        try:
+            log_info("Starting JSON conversion...")
+            structured = self.transcription.convert_json_to_structured(json_path)
+            log_info("JSON conversion completed.")
+            return structured
+        except Exception as e:
+            log_error(f"JSON conversion error: {e}")
+            return f"Error: {e}"
+
     def save_emotion_summary(self, speaker_stats, output_dir, job_id):
         csv_path = os.path.join(output_dir, f"emotion_summary_{job_id}.csv")
         json_path = os.path.join(output_dir, f"emotion_summary_{job_id}.json")
@@ -67,15 +86,13 @@ class Pipeline:
             json.dump(speaker_stats, jf, indent=2)
         with open(csv_path, "w", newline='', encoding="utf-8") as cf:
             writer = csv.writer(cf)
-            writer.writerow(["speaker", "total_segments", "emotion_transitions", "dominant_emotion", "emotion_volatility", "emotion_score_mean"])
+            writer.writerow(["speaker", "total_segments", "emotion_transitions", "dominant_emotion"])
             for speaker, stats in speaker_stats.items():
                 writer.writerow([
                     speaker,
                     stats.get("total_segments", 0),
                     stats.get("emotion_transitions", 0),
-                    stats.get("dominant_emotion", "unknown"),
-                    stats.get("emotion_volatility", 0),
-                    stats.get("emotion_score_mean", 0)
+                    stats.get("dominant_emotion", "unknown")
                 ])
         return csv_path, json_path
 

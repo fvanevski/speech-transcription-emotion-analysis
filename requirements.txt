@@ -1,3 +1,8 @@
-gradio
+# requirements.txt
 whisperx
+yt_dlp
+torch
+torchvision
+torchaudio
 transformers
+gradio

@@ -16,7 +16,9 @@ class Config:
                 "output_dir": "output",
                 "temp_dir": "temp",
                 "batch_size": 10,
-                "log_level": "INFO"
+                "log_level": "INFO",
+                "device": os.getenv("DEVICE", "cpu"),  # Default to CPU if not specified
+                "hf_token": os.getenv("HF_TOKEN", "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")
             }
             self.save_config()
 
