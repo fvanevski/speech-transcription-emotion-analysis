@@ -14,19 +14,14 @@ class Transcription:
         self.device = config.get("device")
         self.hf_token = config.get("hf_token")
 
-    def download_audio_from_youtube(self, youtube_url):
-        ydl_opts = {
-            'format': 'bestaudio/best',
-            'postprocessors': [{
-                'key': 'FFmpegExtractAudio',
-                'preferredcodec': 'mp3',
-                'preferredquality': '192',
-            }],
-            'outtmpl': os.path.join(self.config.get("temp_dir"), 'yt_audio.%(ext)s'),
-        }
-        with yt_dlp.YoutubeDL(ydl_opts) as ydl:
-            ydl.download([youtube_url])
-        return os.path.join(self.config.get("temp_dir"), 'yt_audio.mp3')
+    def download_audio_from_youtube(self, youtube_url, temp_dir, log_file, session_id):
+        basename = "audio_input"
+        webm_path = os.path.join(temp_dir, f"{basename}.webm")
+        wav_path = os.path.join(temp_dir, f"{basename}.wav")
+        safe_run(["yt-dlp", "-f", "251", "-o", webm_path, youtube_url], log_file, session_id)
+        safe_run(["ffmpeg", "-y", "-i", webm_path, "-ac", "1", "-ar", "16000", "-vn", wav_path], log_file, session_id)
+        os.remove(webm_path)
+        return wav_path
 
     def run_whisperx(self, audio_path, output_dir, log_file, session_id):
         safe_run([
