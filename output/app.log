@@ -100,3 +100,19 @@ NameError: name 'EMO_VAL' is not defined
 2025-04-14 11:35:32,619 - INFO - Saving emotion summary: output\job_20250414_113407_47f47dfa\results\emotion_summary_47f47dfa_initial.json, output\job_20250414_113407_47f47dfa\results\emotion_summary_47f47dfa_initial.csv
 2025-04-14 11:35:32,640 - INFO - Job 47f47dfa: Initial results ZIP created.
 2025-04-14 11:35:32,640 - INFO - Job 47f47dfa: Cleaning up...
+2025-04-14 11:52:16,465 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-04-14 11:52:16,515 - INFO - HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-04-14 11:52:16,529 - INFO - HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2025-04-14 11:52:42,990 - INFO - Job 318d1f07 started. Output dir: output\job_20250414_115242_318d1f07
+2025-04-14 11:52:42,990 - INFO - Job 318d1f07: Input is a URL. Downloading...
+2025-04-14 11:52:49,241 - INFO - Job 318d1f07: YouTube audio downloaded to output\job_20250414_115242_318d1f07\temp\audio_input_20250414_115242.wav
+2025-04-14 11:52:49,241 - INFO - Running ffprobe duration check for: output\job_20250414_115242_318d1f07\temp\audio_input_20250414_115242.wav
+2025-04-14 11:52:49,292 - INFO - Audio duration: 1625.362 seconds
+2025-04-14 11:52:49,292 - INFO - Job 318d1f07: Running WhisperX (with --diarize) on output\job_20250414_115242_318d1f07\temp\audio_input_20250414_115242.wav...
+2025-04-14 11:54:03,678 - INFO - Job 318d1f07: WhisperX finished.
+2025-04-14 11:54:03,679 - INFO - Job 318d1f07: Looking for WhisperX output: output\job_20250414_115242_318d1f07\audio_input_20250414_115242.json
+2025-04-14 11:54:03,679 - INFO - Job 318d1f07: Adding emotion analysis via convert_json_to_structured...
+2025-04-14 11:54:06,425 - INFO - Job 318d1f07: Emotion analysis added.
+2025-04-14 11:54:06,425 - INFO - Job 318d1f07: Saving structured transcript to output\job_20250414_115242_318d1f07\structured_transcript.json
+2025-04-14 11:54:06,464 - INFO - Job 318d1f07: Found Speaker IDs: ['SPEAKER_00', 'SPEAKER_01', 'SPEAKER_02', 'SPEAKER_03', 'SPEAKER_04', 'SPEAKER_05', 'SPEAKER_06', 'SPEAKER_07', 'SPEAKER_08', 'SPEAKER_09', 'SPEAKER_10', 'SPEAKER_11', 'SPEAKER_12', 'SPEAKER_13', 'SPEAKER_14', 'SPEAKER_15', 'SPEAKER_16', 'SPEAKER_17']
+2025-04-14 11:54:06,464 - INFO - Job 318d1f07: Cleaning up temporary files...

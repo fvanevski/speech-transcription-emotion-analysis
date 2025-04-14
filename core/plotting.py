@@ -2,7 +2,6 @@
 import gradio as gr
 import pandas as pd # Import pandas to help with Dataframe manipulation if needed
 import os # For os.path.basename
-from core.pipeline import Pipeline
 # Assuming Config is needed indirectly via Pipeline
 # from config.config import Config
 
