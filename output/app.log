@@ -167,3 +167,38 @@ UnboundLocalError: cannot access local variable 'f' where it is not associated w
                                                                                                ^^^^^^^^^^^^^^^^
 NameError: name 'RELABELED_SUFFIX' is not defined. Did you mean: 'RELABELED_JSON_SUFFIX'?
 
+2025-04-14 13:00:46,020 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-04-14 13:00:46,074 - INFO - HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-04-14 13:00:46,085 - INFO - HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2025-04-14 13:00:53,339 - INFO - Job 7bcde7be started. Output dir: output\job_20250414_130053_7bcde7be
+2025-04-14 13:00:59,430 - INFO - Running ffprobe duration check for: output\job_20250414_130053_7bcde7be\temp\audio_input_20250414_130053.wav
+2025-04-14 13:00:59,476 - INFO - Audio duration: 1625.362 seconds
+2025-04-14 13:02:22,531 - INFO - Job 7bcde7be: Found 18 unique speakers.
+2025-04-14 13:02:22,531 - INFO - Job 7bcde7be: Cleaning up temporary files...
+2025-04-14 13:03:15,654 - INFO - Starting relabeling and finalization for: output\job_20250414_130053_7bcde7be\structured_transcript.json
+2025-04-14 13:03:15,655 - INFO - Applying speaker mapping: {'SPEAKER_00': '1', 'SPEAKER_01': '2', 'SPEAKER_02': '3', 'SPEAKER_03': '4', 'SPEAKER_04': '5', 'SPEAKER_05': '6', 'SPEAKER_06': '7', 'SPEAKER_07': '8', 'SPEAKER_08': '9', 'SPEAKER_09': '10', 'SPEAKER_10': '11', 'SPEAKER_11': '12', 'SPEAKER_12': '13', 'SPEAKER_13': '14', 'SPEAKER_14': '15', 'SPEAKER_15': '16', 'SPEAKER_16': '17', 'SPEAKER_17': '18'}
+2025-04-14 13:03:15,668 - INFO - Applied labels to 323 segments.
+2025-04-14 13:03:15,668 - INFO - Saving final transcript data to: output\job_20250414_130053_7bcde7be\structured_transcript_relabeled.json
+2025-04-14 13:03:15,707 - INFO - Recalculating final emotion summary...
+2025-04-14 13:03:15,707 - INFO - Saving emotion summary: output\job_20250414_130053_7bcde7be\emotion_summary_job_20250414_130053_7bcde7be_relabeled.json, output\job_20250414_130053_7bcde7be\emotion_summary_job_20250414_130053_7bcde7be_relabeled.csv
+2025-04-14 13:03:15,710 - INFO - Final emotion summary saved.
+2025-04-14 13:03:15,710 - INFO - Generating emotion plots...
+2025-04-14 13:03:17,431 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-04-14 13:03:17,431 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-04-14 13:03:19,154 - INFO - Generated 53 plot files.
+2025-04-14 13:03:19,154 - INFO - Creating final results ZIP: output\job_20250414_130053_7bcde7be_final_bundle.zip
+2025-04-14 13:11:54,819 - INFO - Job 30b8d005 started. Output dir: output\job_20250414_131154_30b8d005
+2025-04-14 13:11:58,327 - INFO - Running ffprobe duration check for: output\job_20250414_131154_30b8d005\temp\audio_input_20250414_131154.wav
+2025-04-14 13:11:58,379 - INFO - Audio duration: 35.375625 seconds
+2025-04-14 13:12:15,085 - INFO - Job 30b8d005: Found 1 unique speakers.
+2025-04-14 13:12:15,085 - INFO - Job 30b8d005: Cleaning up temporary files...
+2025-04-14 13:13:39,712 - INFO - Starting relabeling and finalization for: output\job_20250414_131154_30b8d005\structured_transcript.json
+2025-04-14 13:13:39,712 - INFO - Applying speaker mapping: {'SPEAKER_00': 'Jolah'}
+2025-04-14 13:13:39,721 - INFO - Applied labels to 14 segments.
+2025-04-14 13:13:39,721 - INFO - Saving final transcript data to: output\job_20250414_131154_30b8d005\structured_transcript_relabeled.json
+2025-04-14 13:13:39,722 - INFO - Recalculating final emotion summary...
+2025-04-14 13:13:39,722 - INFO - Saving emotion summary: output\job_20250414_131154_30b8d005\emotion_summary_job_20250414_131154_30b8d005_relabeled.json, output\job_20250414_131154_30b8d005\emotion_summary_job_20250414_131154_30b8d005_relabeled.csv
+2025-04-14 13:13:39,724 - INFO - Final emotion summary saved.
+2025-04-14 13:13:39,724 - INFO - Generating emotion plots...
+2025-04-14 13:13:39,973 - INFO - Generated 4 plot files.
+2025-04-14 13:13:39,973 - INFO - Creating final results ZIP: output\job_20250414_131154_30b8d005_final_bundle.zip
