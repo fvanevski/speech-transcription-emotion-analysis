@@ -1,0 +1,36 @@
+# ui/main_gui.py
+import gradio as gr
+from core.pipeline import Pipeline
+from config.config import Config
+
+class UI:
+    def __init__(self, config):
+        self.config = config
+        self.pipeline = Pipeline(config)
+
+    def interface_ui(self):
+        with gr.Blocks() as demo:
+            gr.Markdown("## Speech Transcription and Emotion Analysis")
+
+            with gr.Tab("Transcription"):
+                input_file = gr.File(label="Upload Audio File")
+                transcribe_btn = gr.Button("Transcribe")
+                transcribe_output = gr.Textbox(label="Transcription Result")
+                transcribe_btn.click(fn=self.pipeline.transcribe, inputs=[input_file], outputs=[transcribe_output])
+
+            with gr.Tab("Diarization"):
+                input_file = gr.File(label="Upload Audio File")
+                diarize_btn = gr.Button("Diarize")
+                diarize_output = gr.Textbox(label="Diarization Result")
+                diarize_btn.click(fn=self.pipeline.diarize, inputs=[input_file], outputs=[diarize_output])
+
+            with gr.Tab("Emotion Analysis"):
+                input_text = gr.Textbox(label="Enter Text")
+                analyze_btn = gr.Button("Analyze Emotion")
+                emotion_output = gr.Textbox(label="Emotion Result")
+                analyze_btn.click(fn=self.pipeline.analyze_emotion, inputs=[input_text], outputs=[emotion_output])
+
+        return demo
+
+    def launch(self):
+        self.interface_ui().launch()
