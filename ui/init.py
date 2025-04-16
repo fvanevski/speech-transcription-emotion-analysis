@@ -1,3 +1,5 @@
-# ui/__init__.py
+# ui/init.py
 from .main_gui import UI
-from .postprocess_gui import PostProcessUI
+
+# Define what gets imported with 'from ui import *'
+__all__ = ['UI']

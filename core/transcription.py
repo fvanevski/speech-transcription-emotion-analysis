@@ -1,233 +1,198 @@
 # core/transcription.py
-import os
-import subprocess
 import json
-import torch # Added import
-from torch.nn.functional import softmax # Added import
-from transformers import AutoTokenizer, AutoModelForSequenceClassification # Added imports
-import yt_dlp # Keep for download function
-# Removed whisperx import as it's only used via CLI in run_whisperx
+import os
+import traceback
+from pathlib import Path # Import Path
+from typing import Dict, List, Optional, TextIO, Any
 
-# Import logging functions if needed within this module, or rely on pipeline logging
-# from .logging import log_info, log_error
+import torch
+import yt_dlp  # noqa: F401
+from torch import Tensor
+from torch.nn.functional import softmax
+from transformers import (AutoModelForSequenceClassification,
+                          AutoTokenizer)
+
+# --- ADD LOGGING IMPORTS ---
+from .logging import log_info, log_warning, log_error
+from .utils import safe_run
+
+Segment = Dict[str, Any]
+SegmentsList = List[Segment]
 
 class Transcription:
-    def __init__(self, config):
-        """
-        Initializes the Transcription class, loading necessary configurations
-        and the emotion analysis model.
-        """
-        self.config = config
-        self.device = config.get("device", "cpu") # Default to CPU if not specified
-        self.hf_token = config.get("hf_token") # Already validated in Config class
+    config: Dict[str, Any]
+    device: str
+    hf_token: Optional[str]
+    emotion_tokenizer: Optional[AutoTokenizer]
+    emotion_model: Optional[AutoModelForSequenceClassification]
 
-        # --- Load Emotion Analysis Model Once ---
+    def __init__(self, config: Dict[str, Any]):
+        self.config = config
+        self.device = config.get("device", "cpu")
+        self.hf_token = config.get("hf_token")
         self.emotion_tokenizer = None
         self.emotion_model = None
-        emotion_model_name = "nateraw/bert-base-uncased-emotion"
+        emotion_model_name: Optional[str] = self.config.get("emotion_model_name")
+        if not emotion_model_name:
+            emotion_model_name = "nateraw/bert-base-uncased-emotion"
+            log_warning(f"'emotion_model_name' not found in config, using default: {emotion_model_name}") # USE LOG_WARNING
+
         try:
-            print(f"INFO: Loading emotion analysis tokenizer: {emotion_model_name}")
-            self.emotion_tokenizer = AutoTokenizer.from_pretrained(emotion_model_name)
-            print(f"INFO: Loading emotion analysis model: {emotion_model_name} onto device: {self.device}")
-            self.emotion_model = AutoModelForSequenceClassification.from_pretrained(emotion_model_name).to(self.device)
-            # Set model to evaluation mode (important for dropout, batchnorm layers)
+            log_info(f"Loading emotion analysis tokenizer: {emotion_model_name}") # USE LOG_INFO
+            tokenizer: AutoTokenizer = AutoTokenizer.from_pretrained(emotion_model_name)
+            self.emotion_tokenizer = tokenizer
+
+            log_info(f"Loading emotion analysis model: {emotion_model_name} onto device: {self.device}") # USE LOG_INFO
+            model: AutoModelForSequenceClassification = AutoModelForSequenceClassification.from_pretrained(emotion_model_name).to(self.device)
+            self.emotion_model = model
             self.emotion_model.eval()
-            print("INFO: Emotion analysis model loaded successfully.")
+            log_info("Emotion analysis model loaded successfully.") # USE LOG_INFO
         except Exception as e:
-            # Log error appropriately here if logging is set up
-            print(f"ERROR: Failed to load emotion analysis model '{emotion_model_name}': {e}")
-            # Depending on requirements, either raise the error or allow continuation without emotion analysis
-            # For now, we let it continue, but convert_json_to_structured will fail if model is None
-            # raise RuntimeError(f"Failed to load emotion model: {e}")
+            log_error(f"Failed to load emotion analysis model '{emotion_model_name}': {e}") # USE LOG_ERROR
+            self.emotion_tokenizer = None
+            self.emotion_model = None
+            # raise RuntimeError(f"Failed to load emotion model '{emotion_model_name}': {e}") # Keep commented out
 
-    def download_audio_from_youtube(self, youtube_url, temp_dir, log_file_handle, session_id):
-        """Downloads audio from YouTube and converts it to WAV."""
-        # This method relies on safe_run being available
-        basename = "audio_input"
-        # Ensure unique names if multiple downloads happen in parallel to the same temp_dir
-        # Using session_id could help here if temp_dir is shared, but pipeline.py creates unique job dirs
-        webm_path = os.path.join(temp_dir, f"{basename}_{session_id}.webm")
-        wav_path = os.path.join(temp_dir, f"{basename}_{session_id}.wav")
+    def download_audio_from_youtube(
+        self, youtube_url: str, temp_dir: str, log_file_handle: TextIO, session_id: str
+    ) -> str:
+        temp_dir_path = Path(temp_dir) # Convert temp_dir string to Path object
+        basename: str = "audio_input"
+        webm_path: Path = temp_dir_path / f"{basename}_{session_id}.webm"
+        wav_path: Path = temp_dir_path / f"{basename}_{session_id}.wav"
+        webm_path_str: str = str(webm_path)
+        wav_path_str: str = str(wav_path)
+
+        yt_dlp_format: str = self.config.get("youtube_dl_format", "251")
+        ffmpeg_ac: str = str(self.config.get("ffmpeg_audio_channels", 1))
+        ffmpeg_ar: str = str(self.config.get("ffmpeg_audio_samplerate", 16000))
 
         try:
-            print(f"INFO: Downloading YouTube URL: {youtube_url} to {webm_path}")
-            # Prefered audio format 251 (opus), check yt-dlp docs for alternatives if needed
-            safe_run(["yt-dlp", "-f", "251", "-o", webm_path, youtube_url], log_file_handle, session_id)
+            log_info(f"Downloading YouTube URL: {youtube_url} to {webm_path_str}") # USE LOG_INFO
+            safe_run(
+                ["yt-dlp", "-f", yt_dlp_format, "-o", webm_path_str, youtube_url],
+                log_file_handle,
+                session_id,
+            )
 
-            print(f"INFO: Converting {webm_path} to WAV format: {wav_path}")
-            # Convert to WAV, 16kHz sample rate, mono channel using ffmpeg
-            safe_run(["ffmpeg", "-y", "-i", webm_path, "-ac", "1", "-ar", "16000", "-vn", wav_path], log_file_handle, session_id)
-
-            return wav_path
+            log_info(f"Converting {webm_path_str} to WAV format: {wav_path_str}") # USE LOG_INFO
+            safe_run(
+                [
+                    "ffmpeg", "-y", "-i", webm_path_str,
+                    "-ac", ffmpeg_ac, "-ar", ffmpeg_ar,
+                    "-vn", wav_path_str,
+                ],
+                log_file_handle,
+                session_id,
+            )
+            return wav_path_str
         except Exception as e:
-            # Log error
-            print(f"ERROR: YouTube download/conversion failed for {youtube_url}: {e}")
-            raise # Re-raise the exception to be caught by the pipeline
+            log_error(f"YouTube download/conversion failed for {youtube_url}: {e}") # USE LOG_ERROR
+            raise
         finally:
-            # Clean up intermediate webm file
-            if os.path.exists(webm_path):
+            if webm_path.exists():
                 try:
-                    os.remove(webm_path)
-                    print(f"INFO: Removed intermediate file: {webm_path}")
+                    webm_path.unlink()
+                    log_info(f"Removed intermediate file: {webm_path}") # USE LOG_INFO
                 except OSError as e:
-                    print(f"WARN: Failed to remove intermediate file {webm_path}: {e}")
+                    warn_msg = f"WARN: Failed to remove intermediate file {webm_path}: {e}"
+                    try: # Keep fallback print if logging to handle fails
+                        if log_file_handle and not log_file_handle.closed:
+                            log_file_handle.write(f"[{session_id}] {warn_msg}\n")
+                        else:
+                             print(warn_msg) # KEEP PRINT (fallback)
+                    except:
+                        print(warn_msg) # KEEP PRINT (fallback)
 
-
-    def run_whisperx(self, audio_path, output_dir, log_file_handle, session_id):
-        """Runs the WhisperX CLI command for transcription and diarization."""
-        # This method relies on safe_run being available
-        # Ensure hf_token and device are correctly passed from config
+    def run_whisperx(
+        self, audio_path: str, output_dir: str, log_file_handle: TextIO, session_id: str
+    ) -> None:
         if not self.hf_token:
-             # This should have been caught by Config validation, but double-check
-             raise ValueError("Cannot run WhisperX diarization without Hugging Face token.")
-             
-        command = [
+            # Error is raised immediately, so log_error might not be hit, but add anyway
+            log_error("Cannot run WhisperX diarization without Hugging Face token.") # USE LOG_ERROR
+            raise ValueError("Cannot run WhisperX diarization without Hugging Face token.")
+
+        command: List[str] = [ # ... (command build logic) ...
             "whisperx", audio_path,
-            "--model", self.config.get("whisper_model_size", "large-v2"), # Allow model size config
-            "--diarize", # Diarization is enabled
+            "--model", self.config.get("whisper_model_size", "large-v2"),
+            "--diarize",
             "--hf_token", self.hf_token,
             "--output_dir", output_dir,
-            "--output_format", "json",
+            "--output_format", self.config.get("whisper_output_format", "json"),
             "--device", self.device,
-            # Add other relevant whisperx parameters from config if needed
-            # e.g., "--language", self.config.get("language", "en"),
-            # e.g., "--batch_size", str(self.config.get("whisper_batch_size", 16)),
-            # e.g., "--compute_type", self.config.get("compute_type", "float16") # if using GPU
         ]
-        print(f"INFO: Running WhisperX command: {' '.join(command)}") # Log command without token for security
+        lang: Optional[str] = self.config.get("whisper_language")
+        if lang: command.extend(["--language", lang])
+        batch_size_val: Optional[Any] = self.config.get("whisper_batch_size")
+        if batch_size_val is not None: command.extend(["--batch_size", str(batch_size_val)])
+        compute_type: Optional[str] = self.config.get("whisper_compute_type")
+        if compute_type: command.extend(["--compute_type", compute_type])
+
+        command_log: List[str] = [arg if i != command.index("--hf_token") + 1 else "*****"
+                                  for i, arg in enumerate(command) if "--hf_token" in command]
+        log_info(f"Running WhisperX command: {' '.join(command_log)}") # USE LOG_INFO
         safe_run(command, log_file_handle, session_id)
 
-
-    def convert_json_to_structured(self, json_path):
-        """
-        Reads WhisperX JSON output, adds emotion analysis results using the pre-loaded model,
-        and returns a list of structured segment dictionaries.
-        """
-        # Check if emotion model loaded successfully during initialization
+    def convert_json_to_structured(self, json_path: str) -> SegmentsList:
         if not self.emotion_model or not self.emotion_tokenizer:
-            raise RuntimeError("Emotion analysis model was not loaded successfully during initialization. Cannot perform emotion analysis.")
+             # Error is raised immediately
+             log_error("Emotion analysis model/tokenizer was not loaded successfully during initialization.") # USE LOG_ERROR
+             raise RuntimeError("Emotion analysis model/tokenizer was not loaded successfully during initialization.")
 
-        print(f"INFO: Reading WhisperX JSON output from: {json_path}")
+        log_info(f"Reading WhisperX JSON output from: {json_path}") # USE LOG_INFO
         try:
             with open(json_path, "r", encoding="utf-8") as f:
-                data = json.load(f)
-        except FileNotFoundError:
-            print(f"ERROR: WhisperX output JSON file not found at {json_path}")
-            raise
-        except json.JSONDecodeError:
-            print(f"ERROR: Failed to decode JSON from {json_path}")
-            raise
+                data: Dict = json.load(f)
+        except FileNotFoundError as e:
+            log_error(f"WhisperX output JSON file not found at {json_path}") # USE LOG_ERROR
+            raise e
+        except json.JSONDecodeError as e:
+            log_error(f"Failed to decode JSON from {json_path}") # USE LOG_ERROR
+            raise e
 
-        structured = []
-        segments = data.get("segments", [])
-        print(f"INFO: Processing {len(segments)} segments for emotion analysis...")
+        structured: SegmentsList = []
+        segments: List[Dict] = data.get("segments", [])
+        if not isinstance(segments, list):
+             log_warning(f"'segments' key in {json_path} is not a list. Processing as empty.") # USE LOG_WARNING
+             segments = []
+
+        log_info(f"Processing {len(segments)} segments for emotion analysis...") # USE LOG_INFO
 
         for i, segment in enumerate(segments):
-            # Use .get for safer access to potentially missing keys
-            text = segment.get("text", "").strip()
-            start_time = segment.get("start")
-            end_time = segment.get("end")
-            speaker = segment.get("speaker", "unknown")
-            words = segment.get("words", [])
+            text: str = segment.get("text", "").strip()
+            start_time: Optional[float] = segment.get("start")
+            end_time: Optional[float] = segment.get("end")
+            speaker: str = segment.get("speaker", "unknown")
+            words: List[Dict[str, Any]] = segment.get("words", [])
 
-            emotion = "analysis_skipped" # Default emotion if text is empty or model fails
+            emotion: str = "analysis_skipped"
 
-            if text: # Only analyze if text is present
+            if text:
                 try:
-                    # Tokenize and predict using pre-loaded model/tokenizer
-                    inputs = self.emotion_tokenizer(
-                        text,
-                        return_tensors="pt",
-                        truncation=True,
-                        padding=True,
-                        max_length=self.emotion_tokenizer.model_max_length # Use model's max length
+                    inputs = self.emotion_tokenizer( # ... (tokenizer call) ...
+                        text, return_tensors="pt", truncation=True, padding=True,
+                        max_length=self.emotion_tokenizer.model_max_length
                     ).to(self.device)
-
-                    # Ensure inference runs without calculating gradients
                     with torch.no_grad():
-                        logits = self.emotion_model(**inputs).logits
-
-                    # Get probabilities and predicted label ID
-                    probs = softmax(logits, dim=1)
-                    predicted_id = torch.argmax(probs).item()
-                    # Get the label string from the model's config
-                    emotion = self.emotion_model.config.id2label[predicted_id]
-
-                    # Optional: Log progress periodically
-                    # if (i + 1) % 50 == 0:
-                    #     print(f"INFO: Processed {i+1}/{len(segments)} segments...")
-
+                        logits: Tensor = self.emotion_model(**inputs).logits
+                    probs: Tensor = softmax(logits, dim=1)
+                    predicted_id: int = int(torch.argmax(probs).item())
+                    if self.emotion_model.config.id2label:
+                         emotion = self.emotion_model.config.id2label[predicted_id]
+                    else:
+                         log_warning(f"Model config missing id2label mapping for segment {i}. Using predicted ID.") # USE LOG_WARNING
+                         emotion = f"ID_{predicted_id}"
                 except Exception as e:
-                    print(f"WARN: Failed to analyze emotion for segment {i} ('{text[:50]}...'): {e}")
-                    emotion = "analysis_failed" # Indicate failure for this segment
+                    log_warning(f"Failed to analyze emotion for segment {i} ('{text[:50]}...'): {e}") # USE LOG_WARNING
+                    emotion = "analysis_failed"
             else:
-                emotion = "no_text" # Indicate segment had no text
+                emotion = "no_text"
 
-            structured.append({
-                "start": start_time,
-                "end": end_time,
-                "text": text, # Store the stripped text
-                "speaker": speaker,
-                "emotion": emotion, # Emotion label or status
-                "words": words # Include word timings if present
-            })
-            
-        print(f"INFO: Finished processing segments. Returning {len(structured)} structured segments.")
+            segment_output: Segment = { # ... (segment dict creation) ...
+                "start": start_time, "end": end_time, "text": text,
+                "speaker": speaker, "emotion": emotion, "words": words,
+            }
+            structured.append(segment_output)
+
+        log_info(f"Finished processing segments. Returning {len(structured)} structured segments.") # USE LOG_INFO
         return structured
-
-# --- Helper Function (kept outside class, could be moved to utils.py) ---
-def safe_run(command, log_file_handle, session_id=None):
-    """
-    Runs an external command safely, logging output in real-time.
-
-    Args:
-        command (list): The command and its arguments as a list of strings.
-        log_file_handle: An open file handle for writing logs.
-        session_id (str, optional): Identifier for logging context. Defaults to None.
-    """
-    log_prefix = f"[{session_id if session_id else 'PROC'}] "
-    try:
-        # Use Popen for real-time output streaming
-        process = subprocess.Popen(
-            command,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.STDOUT, # Redirect stderr to stdout
-            text=True,
-            encoding='utf-8', # Be explicit about encoding
-            errors='replace' # Handle potential decoding errors in output
-        )
-
-        # Log output line by line
-        if log_file_handle:
-            for line in iter(process.stdout.readline, ''):
-                log_line = f"{log_prefix}{line}"
-                log_file_handle.write(log_line)
-                log_file_handle.flush() # Ensure logs are written immediately
-        else:
-            # If no log handle, just consume output to prevent pipe filling
-             process.communicate()
-
-
-        process.wait() # Wait for the process to complete
-
-        if process.returncode != 0:
-            error_msg = f"Command failed with exit code {process.returncode}: {' '.join(command)}"
-            # Log the error before raising
-            if log_file_handle:
-                 log_file_handle.write(f"{log_prefix}ERROR: {error_msg}\n")
-                 log_file_handle.flush()
-            raise RuntimeError(error_msg)
-
-    except FileNotFoundError:
-        error_msg = f"Command not found: {command[0]}. Ensure it is installed and in PATH."
-        if log_file_handle:
-             log_file_handle.write(f"{log_prefix}ERROR: {error_msg}\n")
-             log_file_handle.flush()
-        raise FileNotFoundError(error_msg)
-    except Exception as e:
-        # Catch other potential errors during process execution
-        error_msg = f"An error occurred while running command {' '.join(command)}: {e}"
-        if log_file_handle:
-             log_file_handle.write(f"{log_prefix}ERROR: {error_msg}\n")
-             log_file_handle.flush()
-        raise RuntimeError(error_msg)

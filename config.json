@@ -2,5 +2,6 @@
   "output_dir": "output",
   "temp_dir": "temp",
   "batch_size": 10,
-  "log_level": "INFO"
+  "log_level": "INFO",
+  "snippet_match_threshold": 0.80
 }

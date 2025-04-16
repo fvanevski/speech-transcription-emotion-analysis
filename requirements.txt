@@ -1,20 +1,18 @@
 # requirements.txt
 
-# For CUDA-enabled PyTorch (replace versions as needed)
---index-url https://download.pytorch.org/whl/cu126
-torch==<TORCH_VERSION>+cu126
-torchaudio==<TORCHAUDIO_VERSION>+cu126
-torchvision==<TORCHVISION_VERSION>+cu126
+# PyTorch and related packages will be installed via:
+# pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu126
+
 
 # Core dependencies
-whisperx
-transformers
-gradio
-matplotlib # For plotting
-pandas
-yt_dlp # For YouTube downloads
+whisperx==3.3.2
+transformers==4.51.3
+gradio==5.25.1
+matplotlib==3.10.1
+pandas==2.2.3
+yt-dlp==2025.3.31
 
-# Diarization dependency (using development version from Git)
-git+https://github.com/pyannote/pyannote-audio.git
+# Diarization dependency (pinned to specific commit from your environment)
+pyannote.audio @ git+https://github.com/pyannote/pyannote-audio.git@240a7f3ef60bc613169df860b536b10e338dbf3c
 
 # Add other direct dependencies below if any

@@ -1,3 +1,9 @@
 {
-    "terminal.integrated.gpuAcceleration": "off"
+    "terminal.integrated.gpuAcceleration": "off",
+    "editor.autoIndent": "full",
+    "editor.formatOnPaste": true,
+    "editor.cursorBlinking": "expand",
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.wordWrap": "on",
+    "editor.formatOnSave": true
 }

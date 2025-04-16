@@ -1,7 +1,9 @@
 # ui/postprocess_gui.py
 import gradio as gr
-from core.pipeline import Pipeline
+
 from config.config import Config
+from core.pipeline import Pipeline
+
 
 class PostProcessUI:
     def __init__(self, config):
@@ -20,8 +22,16 @@ class PostProcessUI:
             template_csv = gr.File(label="Download Speaker CSV Template")
             generate_btn = gr.Button("Generate Label Template")
 
-            generate_btn.click(fn=self.pipeline.generate_csv_template, inputs=[transcript_json], outputs=[template_csv])
-            apply_btn.click(fn=self.pipeline.apply_labels_from_csv, inputs=[transcript_json, label_csv], outputs=[labeled_output])
+            generate_btn.click(
+                fn=self.pipeline.generate_csv_template,
+                inputs=[transcript_json],
+                outputs=[template_csv],
+            )
+            apply_btn.click(
+                fn=self.pipeline.apply_labels_from_csv,
+                inputs=[transcript_json, label_csv],
+                outputs=[labeled_output],
+            )
 
         return demo
 
